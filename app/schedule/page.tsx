@@ -1,8 +1,10 @@
-import { Button } from '@/components/ui/button'
+import { Container } from '@/components/Container'
+import { Title } from '@/components/Title'
 
 const SchedulePage = () => {
- 
-  return <div><Button variant="default" size="default">asdf</Button></div>
+  return <Container className="mt-10">
+    <Title size="md">Schedule</Title>
+  </Container>
 }
 
 export default SchedulePage

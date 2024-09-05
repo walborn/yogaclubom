@@ -2,9 +2,6 @@ import React from 'react'
 
 import { cn } from '@/lib/utils'
 
-// import { Size } from '@/types'
-// import { tags, classNames } from '@/constants/title'
-
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
 
 const tags = {

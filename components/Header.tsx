@@ -7,10 +7,10 @@ import Link from 'next/link'
 
 import { cn } from '@/lib/utils'
 import { Container } from '@/components/Container'
-import { Telegram } from '@/components/Telegram'
-import { Location } from '@/components/Location'
-import { Whatsapp } from '@/components/Whatsapp'
-import { Phone } from '@/components/Phone'
+import { Telegram } from '@/components/icons/Telegram'
+import { Location } from '@/components/icons/Location'
+import { Whatsapp } from '@/components/icons/Whatsapp'
+import { Phone } from '@/components/icons/Phone'
 import { useParams, usePathname } from 'next/navigation'
 
 const navigation = [
@@ -31,50 +31,56 @@ export const Header: React.FC<Props> = ({ className }) => {
   const active = pathname?.split('/')[1]
 
   return (
-    <header className={cn('border-b', className)}>
+    <header className={className}>
       <Container className="flex items-center justify-between px-4 py-8">
-        <div className='flex items-center gap-4'>
+        <div className="flex items-center gap-4">
           <Link href="/">
             <Image src="/logo.png" alt="Logo" width={48} height={48} />
           </Link>
-
-          <Link href="https://yandex.ru/maps/-/CCQlqKsMhD">
-            <Location className="h-4 mr-2 fill-brand hover:fill-telegram inline" />
-            <span className='hidden sm:inline'>м.&nbsp;Бибирево, ул.&nbsp;Плещеева&nbsp;д.12А, 3&nbsp;этаж</span>
-          </Link>
+          <Location
+            href="https://yandex.ru/maps/-/CCQlqKsMhD"
+            className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+          >
+            <span className="hidden sm:inline">м.&nbsp;Бибирево, ул.&nbsp;Плещеева&nbsp;д.12А, 3&nbsp;этаж</span>
+          </Location>
         </div>
 
-        <div className='flex gap-4'>
-          <Link href="tel:+7916876541" className="whitespace-nowrap">
-            <Phone className="h-4 fill-brand hover:fill-telegram inline"/>
-            <span className='hidden md:inline'>+7&nbsp;(916)&nbsp;876-54-13</span>
-          </Link>
+        <div className="flex gap-4">
+          <Phone
+            href="tel:+7916876541"
+            className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+          >
+            <span className="hidden md:inline whitespace-nowrap">+7 (916) 876-54-13</span>
+          </Phone>
       
-          <Link href="https://wa.me/79168765413" className='flex items-center'>
-            <Whatsapp className="h-4 fill-brand hover:fill-whatsapp"/>
-          </Link>
-
-          <Link href="tg://resolve?domain=yoga_club_om" className='flex items-center'>
-            <Telegram className="h-4 fill-brand hover:fill-telegram" />
-          </Link>
+          <Whatsapp
+            href="https://wa.me/79168765413"
+            className="flex items-center [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+          />
+          <Telegram
+            href="tg://resolve?domain=yoga_club_om"
+            className="flex items-center [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+          />
         </div>
       </Container>
-      <Container>
-        <ul>
-          {
-            navigation.map(i => (
-              <li
-                key={i.key}
-                className={cn('inline', { active: i.key === active })}
-              >
-                <Link href={`/${i.href}`}>
-                  {i.title}
-                </Link>
-              </li>
-            ))
-          }
-        </ul>
-      </Container>
+      <div className="bg-brand-100">
+        <Container className="text-center">
+          <ul className="inline-flex gap-4 leading-10">
+            {
+              navigation.map(i => (
+                <li
+                  key={i.key}
+                  className={cn('inline whitespace-nowrap', { active: i.key === active })}
+                >
+                  <Link href={`/${i.href}`}>
+                    {i.title}
+                  </Link>
+                </li>
+              ))
+            }
+          </ul>
+        </Container>
+      </div>
     </header>
   )
 }

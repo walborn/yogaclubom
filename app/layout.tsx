@@ -5,6 +5,7 @@ import { Open_Sans } from 'next/font/google'
 // import { Providers } from '@/shared/components/shared/providers'
 
 import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
 
 import './globals.css'
 
@@ -27,6 +28,7 @@ const RootLayout: React.FC<Props> = ({ children }) => (
         <Header />
       </Suspense>
       {children} {/* <Providers>{children}</Providers> */}
+      <Footer />
     </body>
   </html>
 )

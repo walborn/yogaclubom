@@ -17,6 +17,32 @@ const config = {
         '2xl': '1400px',
       },
     },
+    colors: {
+      transparent: 'transparent',
+      current: '#78dcca',
+      'white': '#ffffff',
+      'purple': '#3f3cbb',
+      'midnight': '#121063',
+      'metal': '#565584',
+      'silver': '#ecebff',
+      'bubble-gum': '#ff77e9',
+      'bermuda': '#78dcca',
+      telegram: '#0088cc',
+      whatsapp: '#25D366',
+      facebook: '#1877F2',
+      
+      brand: {
+        100: '#ffedd5',
+        200: '#fed7aa',
+        300: '#fdba74',
+        400: '#fb923c',
+        500: '#f97316',
+        600: '#ea580c',
+        700: '#9a3412',
+        800: '#155e75',
+        900: '#7c2d12',
+      },
+    },
     extend: {
       colors: {
         border: 'hsl(var(--border))',

@@ -3,6 +3,7 @@
   "rules": {
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
+    "jsx-quotes": ["error", "prefer-double"],
     "comma-dangle": ["error", "always-multiline"],
     "indent": ["error", 2],
     "eol-last": ["error", "always"]
