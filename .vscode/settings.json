@@ -5,11 +5,13 @@
       "Placemark",
       "shala",
       "tailwindcss",
+      "tseslint",
       "Vkontakte",
       "Аштанга",
       "Джит",
       "Кундалини",
       "майсор",
       "Хатха"
-    ]
+    ],
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
 }

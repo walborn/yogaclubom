@@ -32,7 +32,7 @@ export const Title: React.FC<Props> = ({ className, children, size }) => {
   const Hn = tags[size]
 
   return (
-    <Hn className={cn(classNames[size], className)}>
+    <Hn className={cn('text-center font-bold text-brand', classNames[size], className)}>
       {children}
     </Hn>
   )

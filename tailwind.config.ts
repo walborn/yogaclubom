@@ -30,8 +30,10 @@ const config = {
       telegram: '#0088cc',
       whatsapp: '#25D366',
       facebook: '#1877F2',
-      
+      main: '#39291d',
+    
       brand: {
+        DEFAULT: 'hsl(var(--brand))',
         100: '#ffedd5',
         200: '#fed7aa',
         300: '#fdba74',
@@ -39,12 +41,13 @@ const config = {
         500: '#f97316',
         600: '#ea580c',
         700: '#9a3412',
-        800: '#155e75',
+        800: '#8a7873',
         900: '#7c2d12',
       },
     },
     extend: {
       colors: {
+        text: 'hsl(var(--text))',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

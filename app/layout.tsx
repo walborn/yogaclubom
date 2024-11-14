@@ -8,6 +8,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 
 import './globals.css'
+import { cn } from '@/lib/utils'
 
 const font = Open_Sans({ subsets: ['cyrillic'] })
   
@@ -23,7 +24,7 @@ interface Props {
 
 const RootLayout: React.FC<Props> = ({ children }) => (
   <html lang="ru">
-    <body className={font.className}>
+    <body className={cn('text-text', font.className)}>
       <Suspense>
         <Header />
       </Suspense>

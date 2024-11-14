@@ -14,7 +14,7 @@ import { Email } from '@/components/icons/Email'
 import { File } from '@/components/icons/File'
 import { Phone } from '@/components/icons/Phone'
 import { useParams, usePathname } from 'next/navigation'
-import { Vkontakte } from './icons/Vkontakte'
+import { Vkontakte } from './icons/Vkontakte';
 
 const navigation = [
   { key: '', href: '', title: 'Главная' },
@@ -31,7 +31,7 @@ interface Props {
 
 export const Footer: React.FC<Props> = ({ className }) => {
   return (
-    <footer className={className}>
+    <footer className={cn('bg-main text-brand-800', className)}>
       <Container className="flex items-center justify-between px-4 py-8">
         <Link href="/">
           <Image src="/logo.png" alt="Logo" width={128} height={128} />

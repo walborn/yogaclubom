@@ -5,9 +5,14 @@ import { Container } from '@/components/Container'
 import masters from '../masters'
 
 interface Props {
-  params: { id: string }
+  params: Promise<{ id: string }>
 }
-const ProductPage = async ({ params: { id } }: Props) => {
+const ProductPage = async (props: Props) => {
+  const params = await props.params
+
+  const {
+    id,
+  } = params
 
   const master = masters.get(id)
   if (!master) return notFound()
