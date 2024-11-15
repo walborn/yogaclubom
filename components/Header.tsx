@@ -29,7 +29,11 @@ interface Props {
 export const Header: React.FC<Props> = ({ className }) => {
   const pathname = usePathname()
   const active = pathname?.split('/')[1]
+  const [ opened, setOpened ] = React.useState(false)
 
+  const handleOpen = () => {
+    setOpened(i => !i)
+  }
   return (
     <header className={className}>
       <Container className="flex items-center justify-between px-4 py-8">
@@ -62,15 +66,44 @@ export const Header: React.FC<Props> = ({ className }) => {
             className="flex items-center [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
           />
         </div>
+        <div className="md:hidden" onClick={() => setOpened(true)}>
+          <svg
+            className="h-6 w-6 cursor-pointer"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M 4 4 A 1.0001 1.0001 0 1 0 4 6 L 20 6 A 1.0001 1.0001 0 1 0 20 4 L 4 4 z M 4 11 A 1.0001 1.0001 0 1 0 4 13 L 20 13 A 1.0001 1.0001 0 1 0 20 11 L 4 11 z M 4 18 A 1.0001 1.0001 0 1 0 4 20 L 20 20 A 1.0001 1.0001 0 1 0 20 18 L 4 18 z"/>
+          </svg>
+        </div>
       </Container>
-      <div className="bg-brand-100">
+   
+      {opened && <ul className="divide-y divide-slate-200 fixed top-0 right-0 z-50 flex h-full flex-col items-center bg-white py-8 text-center md:hidden">
+        {
+          navigation.map(i => (
+            <li
+              key={i.key}
+              className={cn('w-full', { 'text-brand-400': i.key === active })}
+            >
+              <Link
+                href={`/${i.href}`}
+                onClick={() => setOpened(false)}
+                className="w-full px-10 leading-10"
+              >
+                {i.title}
+              </Link>
+            </li>
+          ))
+        }
+      </ul>}
+      {opened && <div onClick={() => setOpened(false)} className="fixed top-0 left-0 z-40 w-full h-full bg-brand-800/20" />}
+      <div className="bg-brand-100 max-md:hidden">
         <Container className="text-center">
           <ul className="inline-flex gap-4 leading-10">
             {
               navigation.map(i => (
                 <li
                   key={i.key}
-                  className={cn('inline whitespace-nowrap', { active: i.key === active })}
+                  className={cn('inline whitespace-nowrap', { 'text-brand-400': i.key === active })}
                 >
                   <Link href={`/${i.href}`}>
                     {i.title}

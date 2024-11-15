@@ -32,6 +32,7 @@ const config = {
       whatsapp: '#25D366',
       facebook: '#1877F2',
       main: '#39291d',
+      black: '#000000',
     
       brand: {
         DEFAULT: 'hsl(var(--brand))',

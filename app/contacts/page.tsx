@@ -14,7 +14,7 @@ import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
 
 const ContactsPage = () => {
   return (
-    <Container className="md:flex mx-auto bg-white rounded-xl shadow overflow-hidden my-16">
+    <Container className="md:flex mx-auto bg-white rounded-xl shadow overflow-hidden mb-16">
       <ul className="md:shrink-0 md:h-full md:w-2/5 p-2">
         <li>
           <Location

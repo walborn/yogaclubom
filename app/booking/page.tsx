@@ -16,10 +16,10 @@ import {
 
 const BookingPage = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true }),
   )
 
-  return <Container className="mt-10">
+  return <Container className="mb-10 px-5 max-lg:overflow-hidden">
     <strong>Наши залы</strong> - это многофункциональные площадки,
       которые подойдут для различных занятий и мероприятий.
       Залы предназначены для проведения индивидуальных и групповых
@@ -37,9 +37,9 @@ const BookingPage = () => {
       <li>Раздевалки (женская, мужская)</li>
       <li>Спортинвентарь: коврики, блоки, ремни для йоги, болстеры, татами</li>
     </ul>
+      
     <Carousel
       plugins={[plugin.current]}
-      className="w-full"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
