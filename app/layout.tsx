@@ -24,11 +24,11 @@ interface Props {
 
 const RootLayout: React.FC<Props> = ({ children }) => (
   <html lang="ru">
-    <body className={cn('text-text', font.className)}>
+    <body className={cn('text-text flex flex-col min-h-screen', font.className)}>
       <Suspense>
         <Header />
       </Suspense>
-      {children} {/* <Providers>{children}</Providers> */}
+      <main className="flex-auto">{children}</main> {/* <Providers>{children}</Providers> */}
       <Footer />
     </body>
   </html>

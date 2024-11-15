@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import animatePlugin from 'tailwindcss-animate'
 
 const config = {
   darkMode: ['class'],
@@ -46,6 +47,9 @@ const config = {
       },
     },
     extend: {
+      boxShadow: {
+        light: '0px 0px 0px 1px rgba(0, 0, 0, 0.05)',
+      },
       colors: {
         text: 'hsl(var(--text))',
         border: 'hsl(var(--border))',
@@ -103,7 +107,7 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [animatePlugin],
 } satisfies Config
 
 export default config

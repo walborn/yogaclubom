@@ -2,19 +2,20 @@ import { Container } from '@/components/Container'
 import Link from 'next/link'
 
 import { masters } from './masters'
+import { Avatar } from '@/components/Avatar'
+import { Title } from '@/components/Title'
 
 
 const MastersPage = () => {
-  return <Container className="mt-10">
+  return <Container>
     <ul>
       {
         masters.map(([ key, { name, description }]) => (
-          <li key={key}>
+          <li key={key} className="m-5 p-5 rounded shadow-light">
             <Link href="/masters/[id]" as={`/masters/${key}`}>
-              {/* <Avatar src={`/images/avatar/${i.id}.jpg`} alt={i.name} /> */}
-              <div>{name}</div>
-              <div>{description}</div>
-              {/* <Description>{i.description}</Description> */}
+              <Avatar className={'m-auto'} src={`/images/avatar/${key}.jpg`} alt={name} size={48} />
+              <Title size="md">{name}</Title>
+              <p className="text-center">{description}</p>
             </Link>
           </li>
         ))
