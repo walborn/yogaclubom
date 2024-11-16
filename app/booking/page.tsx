@@ -13,30 +13,32 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import { List } from '@/components/List'
 
 const BookingPage = () => {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true }),
   )
 
-  return <Container className="mb-10 px-5 max-lg:overflow-hidden">
-    <strong>Наши залы</strong> - это многофункциональные площадки,
+  return <Container className="my-5 px-5 max-lg:overflow-hidden">
+    <p className="mb-5"><strong>Наши залы</strong> - это многофункциональные площадки,
       которые подойдут для различных занятий и мероприятий.
       Залы предназначены для проведения индивидуальных и групповых
       занятий по следующим направлениям:
-    <ul>
+    </p>
+    <List>
       <li>Йога</li>
       <li>Фитнес</li>
       <li>Единоборства</li>
-    </ul>
+    </List>
     <Title size="lg">Характеристики</Title>
-    <ul>
+    <List className="mb-5">
       <li>Площадь залов: 70 и 17 м<sup>2</sup></li>
       <li>Высота потолков: 3.4 м</li>
       <li>Напольное покрытие: ламинат</li>
       <li>Раздевалки (женская, мужская)</li>
       <li>Спортинвентарь: коврики, блоки, ремни для йоги, болстеры, татами</li>
-    </ul>
+    </List>
       
     <Carousel
       plugins={[plugin.current]}

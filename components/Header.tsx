@@ -95,7 +95,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           ))
         }
       </ul>}
-      {opened && <div onClick={() => setOpened(false)} className="fixed top-0 left-0 z-40 w-full h-full bg-brand-800/20" />}
+      {opened && <div onClick={() => setOpened(false)} className="fixed top-0 left-0 z-40 w-full h-full bg-brand-800/20 md:hidden" />}
       <div className="bg-brand-100 max-md:hidden">
         <Container className="text-center">
           <ul className="inline-flex gap-4 leading-10">
