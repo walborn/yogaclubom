@@ -14,15 +14,8 @@ import { Phone } from '@/components/icons/Phone'
 import { useParams, usePathname } from 'next/navigation'
 
 import { List } from '@/components/List'
-
-const navigation = [
-  { key: '', href: '', title: 'Главная' },
-  { key: 'schedule', href: 'schedule', title: 'Расписание' },
-  { key: 'prices', href: 'prices', title: 'Цены' },
-  { key: 'masters', href: 'masters', title: 'Инструкторы' },
-  { key: 'booking', href: 'booking', title: 'Аренда залов' },
-  { key: 'contacts', href: 'contacts', title: 'Контакты' },
-]
+import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
 
 interface Props {
   className?: string;
@@ -30,17 +23,33 @@ interface Props {
 
 export const Unlimited: React.FC<Props> = ({ className }) => {
   return (
-    <section className="flex">
-      <List className="flex-1">
-        <li>Стоимость ₽ <strong>1000</strong></li>
-        <li>Акция актуальна, если вы у нас впервые</li>
-        <li>2 занятия в течение 7 дней. Нельзя переносить, замораживать и продлевать</li>
-        <li>Мы будем благодарны за любой честный отзыв в удобном для вас сервисе (2ГИС, яндекс карты)</li>
+    <section className="md:flex mt-5">
+      <List className="flex-1 max-md:mb-5">
+        <li className="mb-2">Стоимость ₽ <strong>1000</strong></li>
+        <li className="mb-2">Акция актуальна, если вы у нас впервые</li>
+        <li className="mb-2">2 занятия в течение 7 дней. Нельзя переносить, замораживать и продлевать</li>
+        <li className="mb-2">Мы будем благодарны за любой честный отзыв в удобном для вас сервисе (2ГИС, яндекс карты)</li>
       </List>
-      <form className="flex-1">
-        <input />
-      </form>
 
+      <div className="flex-1">
+        <form className="flex flex-col gap-3 mb-5">
+          <Input
+            type="text"
+            placeholder="Имя"
+            onChange={(e) => console.log(e.target.value)}
+          />
+          <Input
+            type="text"
+            placeholder="Телефон"
+            onChange={(e) => console.log(e.target.value)}
+          />
+          <Button
+            className="mt-2 bg-brand-400 hover:bg-brand-400/90"
+          >
+            Участвовать
+          </Button>
+        </form>
+      </div>
     </section>
   )
 }
