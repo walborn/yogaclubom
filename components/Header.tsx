@@ -31,12 +31,9 @@ export const Header: React.FC<Props> = ({ className }) => {
   const active = pathname?.split('/')[1]
   const [ opened, setOpened ] = React.useState(false)
 
-  const handleOpen = () => {
-    setOpened(i => !i)
-  }
   return (
     <header className={className}>
-      <Container className="flex items-center justify-between px-4 py-8">
+      <Container className="flex items-center justify-between p-4">
         <div className="flex items-center gap-4">
           <Link href="/">
             <Image src="/logo.png" alt="Logo" width={48} height={48} />

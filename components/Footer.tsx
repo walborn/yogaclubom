@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 
 import Image from 'next/image'
@@ -13,17 +11,7 @@ import { Whatsapp } from '@/components/icons/Whatsapp'
 import { Email } from '@/components/icons/Email'
 import { File } from '@/components/icons/File'
 import { Phone } from '@/components/icons/Phone'
-import { useParams, usePathname } from 'next/navigation'
-import { Vkontakte } from './icons/Vkontakte';
-
-const navigation = [
-  { key: '', href: '', title: 'Главная' },
-  { key: 'schedule', href: 'schedule', title: 'Расписание' },
-  { key: 'prices', href: 'prices', title: 'Цены' },
-  { key: 'masters', href: 'masters', title: 'Инструкторы' },
-  { key: 'booking', href: 'booking', title: 'Аренда залов' },
-  { key: 'contacts', href: 'contacts', title: 'Контакты' },
-]
+import { Vkontakte } from './icons/Vkontakte'
 
 interface Props {
   className?: string;
@@ -32,7 +20,7 @@ interface Props {
 export const Footer: React.FC<Props> = ({ className }) => {
   return (
     <footer className={cn('bg-main text-brand-800', className)}>
-      <Container className="flex items-center justify-between px-4 py-8">
+      <Container className="flex max-md:flex-col gap-5 items-center justify-between px-4 py-8">
         <Link href="/">
           <Image src="/logo.png" alt="Logo" width={128} height={128} />
         </Link>

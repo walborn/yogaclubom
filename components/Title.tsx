@@ -14,12 +14,12 @@ const tags = {
 } as const
 
 const classNames = {
-  xs: 'text-[16px]',
-  sm: 'text-[22px]',
-  md: 'text-[26px]',
-  lg: 'text-[32px]',
-  xl: 'text-[40px]',
-  '2xl': 'text-[48px]',
+  xs: 'text-[16px] leading-tight mb-1',
+  sm: 'text-[22px] leading-tight mb-2',
+  md: 'text-[26px] leading-tight mb-4',
+  lg: 'text-[32px] leading-tight mb-5',
+  xl: 'text-[40px] leading-tight mb-6',
+  '2xl': 'text-[48px] leading-tight mb-7',
 } as const
 
 interface Props {

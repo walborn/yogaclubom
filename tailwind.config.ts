@@ -24,8 +24,9 @@ const config = {
       'white': '#ffffff',
       'purple': '#3f3cbb',
       'midnight': '#121063',
-      'metal': '#565584',
-      'silver': '#ecebff',
+      metal: '#565584',
+      silver: '#ecebff',
+      gold: '#ffdf00',
       'bubble-gum': '#ff77e9',
       'bermuda': '#78dcca',
       telegram: '#0088cc',
@@ -49,6 +50,7 @@ const config = {
     },
     extend: {
       boxShadow: {
+        lightest: '0px 0px 0px 1px rgba(0, 0, 0, 0.03)',
         light: '0px 0px 0px 1px rgba(0, 0, 0, 0.05)',
       },
       colors: {

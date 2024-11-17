@@ -27,12 +27,12 @@ const HomePage: React.FC<Props> = () => {
     Autoplay({ delay: 4000, stopOnInteraction: true }),
   )
   return (
-    <Container className="mt-5">
+    <Container className="max-lg:overflow-hidden mb-5">
       <Carousel
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
-        className="mb-5 rounded"
+        className="m-5 rounded"
       >
         <CarouselContent>
           {[
@@ -59,7 +59,7 @@ const HomePage: React.FC<Props> = () => {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-      <div className="mx-4 mb-5 flex flex-col gap-5">
+      <div className="mx-4 my-5 flex flex-col gap-8">
         <section>
           <strong>Наш клуб</strong> - это сообщество увлеченных людей,
         целью которых является саморазвитие и помощь в этом другим людям.
@@ -88,7 +88,7 @@ const HomePage: React.FC<Props> = () => {
           <div className="item">Джит Кун-до - стиль, основанный Брюсом Ли</div>
         </section>
         <section>
-          <Title size="lg" className="text-brand">Акция: 2 занятия по цене 1!</Title>
+          <Title size="lg">Акция: 2 занятия по цене 1!</Title>
           <Unlimited />
         </section>
       </div>
