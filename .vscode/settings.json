@@ -3,6 +3,7 @@
       "clsx",
       "Embla",
       "Placemark",
+      "sendgrid",
       "shala",
       "tailwindcss",
       "tseslint",

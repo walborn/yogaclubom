@@ -6,6 +6,7 @@ import { Open_Sans } from 'next/font/google'
 
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { Providers } from '@/components/Providers'
 
 import './globals.css'
 import { cn } from '@/lib/utils'
@@ -28,7 +29,7 @@ const RootLayout: React.FC<Props> = ({ children }) => (
       <Suspense>
         <Header />
       </Suspense>
-      <main className="flex-auto">{children}</main> {/* <Providers>{children}</Providers> */}
+      <main className="flex-auto"><Providers>{children}</Providers></main> {/* <Providers>{children}</Providers> */}
       <Footer />
     </body>
   </html>

@@ -11,6 +11,7 @@
   "dependencies": {
     "@pbe/react-yandex-maps": "^1.2.5",
     "@radix-ui/react-slot": "^1.1.0",
+    "@sendgrid/mail": "^8.1.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "embla-carousel-autoplay": "^8.3.1",
@@ -19,7 +20,9 @@
     "next": "^15.0.4-canary.11",
     "react": "19.0.0-rc-380f5d67-20241113",
     "react-dom": "19.0.0-rc-380f5d67-20241113",
+    "react-hot-toast": "^2.4.1",
     "react-yandex-maps": "^4.6.0",
+    "resend": "^4.0.1-alpha.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

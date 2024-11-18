@@ -49,7 +49,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
               href="tel:+79168765413"
               className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
             >
-                +7 (916) 876-54-13
+              +7 (916) 876-54-13
             </Phone>
             <Whatsapp
               href="https://wa.me/79168765413"
