@@ -11,7 +11,7 @@ import { Telegram } from '@/components/icons/Telegram'
 import { Location } from '@/components/icons/Location'
 import { Whatsapp } from '@/components/icons/Whatsapp'
 import { Phone } from '@/components/icons/Phone'
-import { useParams, usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 
 const navigation = [
   { key: '', href: '', title: 'Главная' },

@@ -3,15 +3,18 @@
 import React from 'react'
 
 import { Container } from '@/components/Container'
-import lessons, { Lesson, getDay, weekdays } from './lessons'
+import lessons, { getDay, weekdays } from './lessons'
+import type { Lesson } from './lessons'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
+
+type Row = Record<string, Lesson[]>
 const SchedulePage = () => {
   const [ day, setDay ] = React.useState(getDay())
   const [ view, setView ] = React.useState('day') // day or week
 
-  const table = lessons.reduce((r: any, dayLessons: Lesson[], weekday: any) => {
+  const table = lessons.reduce((r: Row[], dayLessons: Lesson[], weekday: number) => {
     dayLessons.forEach((lesson: Lesson) => {
       const hour: number = lesson.time / 60 | 0
       if (!r[hour]) r[hour] = { [weekday]: [ lesson ] }
@@ -44,7 +47,7 @@ const SchedulePage = () => {
       </ul>
       <ul>
         {
-          lessons[day].map((i: any) => (
+          lessons[day].map((i: Lesson) => (
             <li
               key={i.id}
               className="p-5 my-3 rounded-md shadow-light"
@@ -96,7 +99,7 @@ const SchedulePage = () => {
           </thead>
           <tbody>
             {
-              table.map((row: any, index: number) => (
+              table.map((row: Row, index: number) => (
                 <tr
                   key={index}
                   className={cn(index % 2 && 'bg-[#8a78730d]')}

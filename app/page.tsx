@@ -16,11 +16,11 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 
-interface Props {
-  searchParams: any
-}
+// interface Props {
+//   searchParams: any
+// }
 
-const HomePage: React.FC<Props> = () => {
+const HomePage: React.FC = () => {
   // const searchParams = await props.searchParams
   // console.log(111, searchParams)
   const plugin = React.useRef(

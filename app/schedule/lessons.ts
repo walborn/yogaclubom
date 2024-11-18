@@ -252,7 +252,7 @@ export const lessons = [
 
 
 // Преобразуем список занятий в объект
-export const getLessons: any = (list: Lesson[]) => {
+export const getLessons = (list: Lesson[]) => {
   const lessons: Lesson[][] =  list
     .reduce((r: Lesson[][], i: Lesson) => {
       if (!Array.isArray(r[i.weekday])) r[i.weekday] = []
