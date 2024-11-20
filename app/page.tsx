@@ -89,7 +89,7 @@ const HomePage: React.FC = () => {
         </section>
         <section>
           <Title size="lg">Акция: 2 занятия по цене 1!</Title>
-          <Unlimited />
+          <Unlimited className="shadow-light p-5 rounded" />
         </section>
       </div>
     </Container>

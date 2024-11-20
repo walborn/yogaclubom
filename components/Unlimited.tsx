@@ -1,66 +1,107 @@
 'use client'
 
 import React from 'react'
-import toast from 'react-hot-toast'
 
-import { List } from '@/components/List'
+import { cn } from '@/lib/utils'
 import { Input } from '@/components/ui/input'
+import { List } from '@/components/List'
 import { Button } from '@/components/ui/button'
 import { Phone } from '@/components/icons/Phone'
+import { LoaderCircle } from 'lucide-react'
 
-export const Unlimited: React.FC = () => {
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from '@/components/ui/form'
+import { PhoneInput } from '@/components/ui/phone-input'
+import { useToast, ToasterToast } from '@/hooks/use-toast'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { isValidPhoneNumber } from 'react-phone-number-input'
+import { z } from 'zod'
 
-  const [ name, setName ] = React.useState('')
-  const [ phone, setPhone ] = React.useState('')
+const FormSchema = z.object({
+  name: z
+    .string()
+    .min(2, {
+      message: 'Имя должно содержать больше двух символов',
+    }),
+  phone: z
+    .string()
+    .refine(isValidPhoneNumber, { message: 'Невалидный номер' }),
+})
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    const toastId = toast.loading('Загрузка...',
-      { position: 'bottom-right', style: { minWidth: '300px' }})
+interface Props {
+  className?: string
+}
 
-    const data = await fetch('/api/sendgrid', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone, subject: 'Unlimited Week' }),
+export const Unlimited: React.FC<Props> = ({ className }) => {
+  const { toast } = useToast()
+
+  const form = useForm<z.infer<typeof FormSchema>>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+    },
+  })
+
+  const handleSubmit = async (data: z.infer<typeof FormSchema>) => {
+    const { id, update } = toast({
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <LoaderCircle className="animate-spin opacity-20" />
+        </pre>
+      ),
     })
 
-    if (data.status !== 200) toast.error(
-      <div>
-        <strong>Что-то пошло не так</strong><br />
+    const { status } = await fetch('/api/sendgrid', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...data, subject: 'Unlimited Week' }),
+    })
+
+    const failure: ToasterToast = {
+      id,
+      variant: 'destructive',
+      title: 'Что-то пошло не так',
+      description: (
+        <div>
         Повторите попытку позже или позвоните по телефону 
-        <Phone
-          href="tel:+79168765413"
-          className="whitespace-nowrap [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
-        >
+          <Phone
+            href="tel:+79168765413"
+            className="whitespace-nowrap [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+          >
           +7 (916) 876-54-13
-        </Phone>
-      </div>,
-      {
-        id: toastId,
-      },
-    )
-    else toast.success(
-      <div className="text-center">
-        <strong className="whitespace-nowrap">Вы успешно записались на акцию</strong><br />
-        <b className="text-2xl">&quot;2 занятия по цене 1&quot;</b><br />
+          </Phone>
+        </div>
+      ),
+    }
+
+    const success: ToasterToast = {
+      id,
+      description: (
+        <div className="text-center">
+          <strong className="whitespace-nowrap">🎉 Вы успешно записались на акцию</strong><br />
+          <b className="text-2xl">&quot;2 занятия по цене 1&quot;</b><br />
         В скором времени мы с Вами свяжемся для подтверждения участия!
-      </div>,
-      {
-        id: toastId,
-        icon: '🎉',
-      },
-    )
+        </div>
+      ),
+    }
+    
+    if (status === 200) {
+      update(success)
+      form.reset()
+    } else {
+      update(failure)
+    }
   }
 
-  // const validate = () => {
-  //   if (!name) errors.name = 'Обязательное поле'
-  //   if (phone && !/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s0-9]*$/.test(phone)) errors.phone = 'Номер должен начинаться с +7, 8 и иметь 11 цифр'
-
-  //   return errors
-  // }
-
   return (
-    <section className="md:flex md:gap-2">
+    <section className={cn('md:flex md:gap-2', className)}>
       <List className="flex-1 max-md:mb-5 flex flex-col gap-2">
         <li>Стоимость ₽ <strong>1000</strong></li>
         <li>Акция актуальна, если вы у нас впервые</li>
@@ -69,27 +110,43 @@ export const Unlimited: React.FC = () => {
       </List>
 
       <div className="flex-1">
-        <form className="flex flex-col gap-3 mb-5" onSubmit={handleSubmit}>
-          <Input
-            type="text"
-            name="name"
-            placeholder="Имя"
-            onChange={(e) => setName(e.target.value)}
-          />
-          <Input
-            type="text"
-            name="phone"
-            placeholder="Телефон"
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <Button
-            type="submit"
-            className="mt-2 bg-brand-400 hover:bg-brand-400/90"
-            disabled={!name || !phone}
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(handleSubmit)}
+            className="flex gap-4 flex-col items-start w-full"
           >
-            Участвовать
-          </Button>
-        </form>
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start w-full">
+                  <FormControl className="w-full">
+                    <Input placeholder="Ваше имя" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+      
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem className="flex flex-col items-start w-full">
+                  <FormControl className="w-full">
+                    <PhoneInput
+                      placeholder="Номер телефона"
+                      {...field}
+                      defaultCountry="RU"
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <Button className="mt-2 bg-brand-400 hover:bg-brand-400/90 w-full" type="submit">Участвовать</Button>
+          </form>
+        </Form>
       </div>
     </section>
   )

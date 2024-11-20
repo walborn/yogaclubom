@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     from: 'yuzhakov.boris@gmail.com',
     subject,
     text: `${name} : ${phone}`,
-    html: `<p><b>${name}</b> - <a href="tel:+${phone}">+${phone}</a></p>`,
+    html: `<p><b>${name}</b> - <a href="tel:${phone}">${phone}</a></p>`,
   }
 
   try {
