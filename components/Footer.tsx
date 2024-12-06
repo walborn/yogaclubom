@@ -44,7 +44,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
                 м. Бибирево ул. Плещеева, д. 12А, 3 этаж
             </Location>
           </li>
-          <li>
+          <li className="relative">
             <Phone
               href="tel:+79168765413"
               className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
@@ -53,11 +53,11 @@ export const Footer: React.FC<Props> = ({ className }) => {
             </Phone>
             <Whatsapp
               href="https://wa.me/79168765413"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="ml-2 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
             />
             <Telegram
               href="tg://resolve?domain=yoga_club_om"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="ml-6 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
             />
           </li>
         

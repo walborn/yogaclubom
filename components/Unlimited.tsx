@@ -144,7 +144,13 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
                 </FormItem>
               )}
             />
-            <Button className="mt-2 bg-brand-400 hover:bg-brand-400/90 w-full" type="submit">Участвовать</Button>
+            <Button
+              className="mt-2 bg-brand-400 hover:bg-brand-400/90 w-full"
+              type="submit"
+              disabled={!form.getFieldState('phone').isDirty}
+            >
+              Участвовать
+            </Button>
           </form>
         </Form>
       </div>

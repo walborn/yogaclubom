@@ -32,7 +32,7 @@ const SchedulePage = () => {
       >
         Показать всю неделю
       </Button>
-      <ul className="grid grid-cols-7 rounded-md mb-2 shadow-light">
+      <ul className="grid grid-cols-7 rounded-md mb-2 shadow-light overflow-hidden">
         {
           weekdays.map((weekday, i) => (
             <li
@@ -79,7 +79,7 @@ const SchedulePage = () => {
         className="text-center p-5 max-w-full overflow-x-scroll"
       >
         <table
-          className="text-xs rounded shadow-light"
+          className="text-xs rounded shadow-light overflow-hidden"
         >
           <thead>
             <tr>

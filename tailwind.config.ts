@@ -52,6 +52,7 @@ const config = {
       boxShadow: {
         lightest: '0px 0px 0px 1px rgba(0, 0, 0, 0.03)',
         light: '0px 0px 0px 1px rgba(0, 0, 0, 0.05)',
+        stripe: 'rgba(0, 0, 0, 0.2) 0px 18px 50px -10px',
       },
       colors: {
         text: 'hsl(var(--text))',
