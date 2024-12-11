@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
@@ -34,6 +35,7 @@ const RootLayout: React.FC<Props> = ({ children }) => (
       </Suspense>
       <main className="flex-auto mt-5"><Providers>{children}</Providers></main> {/* <Providers>{children}</Providers> */}
       <Footer />
+      <SpeedInsights/>
     </body>
   </html>
 )
