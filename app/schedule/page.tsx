@@ -57,7 +57,7 @@ const SchedulePage = () => {
               <div className="font-light">{i.master}</div>
               <div>{i.alternate}</div>
               <div>{i.level}</div>
-              <div>{i.note}</div>
+              <div className="text-brand-300">{i.note}</div>
             </li>
           ))
         }
@@ -116,14 +116,14 @@ const SchedulePage = () => {
                             row[weekday]?.filter((i: Lesson) => !i.hidden)?.map((i: Lesson) => (
                               <li
                                 key={i.id}
-                                className="p-5 my-3 rounded-md shadow-[#e7eaf3_0px_1px_1px_inset,#e7eaf3_0px_0px_8px]"
+                                className="p-5 my-3 rounded-md shadow-light"
                               >
                                 <div className="text-[#468ee5] font-bold">{i.from} - {i.to}</div>
                                 <div>{i.title}</div>
                                 <div className="font-light">{i.master}</div>
                                 <div>{i.alternate}</div>
                                 <div>{i.level}</div>
-                                <div>{i.note}</div>
+                                <div className="text-brand-300 font-normal">{i.note}</div>
                               </li>
                             ))
                           }

@@ -36,16 +36,13 @@ const HomePage: React.FC = () => {
       >
         <CarouselContent>
           {[
-            '/images/home/2-1.jpeg',
-            '/images/home/3-1.jpeg',
-            '/images/home/4.jpeg',
-            '/images/home/7.jpeg',
-            '/images/home/8.jpeg',
-            '/images/home/9.jpeg',
-            // '/images/home/11.jpeg',
-            // '/images/home/12.jpeg',
-            // '/images/home/16.jpeg',
-            // '/images/home/21.jpeg',
+            '/images/home/new_year.jpeg',
+            '/images/home/virabhadrasana.jpeg',
+            '/images/home/healthy_back.jpeg',
+            '/images/home/jeet_kune_do.jpeg',
+            '/images/home/sarvangasana.jpeg',
+            '/images/home/kundalini.jpeg',
+            '/images/home/adho_mukha_svanasana.jpeg',
           ].map((imageUrl) => (
             <CarouselItem key={imageUrl}>
               <Card>
