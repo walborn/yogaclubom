@@ -7,6 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Providers } from '@/components/Providers'
+import { Analytics } from '@/components/Analytics'
 
 import './globals.css'
 import { cn } from '@/lib/utils'
@@ -16,6 +17,7 @@ const font = Open_Sans({ subsets: ['cyrillic'] })
 export const metadata: Metadata = {
   title: 'YogaClubOM',
   description: 'Yoga club OM',
+  verification: { yandex: '1b46776c88d34ab0' },
 }
 
 interface Props {
@@ -36,6 +38,7 @@ const RootLayout: React.FC<Props> = ({ children }) => (
       <main className="flex-auto mt-5"><Providers>{children}</Providers></main> {/* <Providers>{children}</Providers> */}
       <Footer />
       <SpeedInsights/>
+    <Analytics />
     </body>
   </html>
 )

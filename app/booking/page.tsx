@@ -10,6 +10,7 @@ import { GymCarousel } from '@/components/GymCarousel'
 export const metadata: Metadata = {
   title: 'Аренда залов | Yoga Club OM',
   description: 'Доступные для аренды залы в клубе Yoga Club OM',
+  keywords: [ 'аренда зала', 'аренда помещения', 'аренда класса' ],
 }
 
 const BookingPage = () => {

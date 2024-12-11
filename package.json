@@ -28,10 +28,12 @@
     "next": "15.1.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-ga": "^3.3.1",
     "react-headroom": "^3.2.1",
     "react-hook-form": "^7.54.0",
     "react-phone-number-input": "^3.4.10",
     "react-yandex-maps": "^4.6.0",
+    "react-yandex-metrika": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.1"
   },
