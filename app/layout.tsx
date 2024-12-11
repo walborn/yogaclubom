@@ -38,7 +38,7 @@ const RootLayout: React.FC<Props> = ({ children }) => (
       <main className="flex-auto mt-5"><Providers>{children}</Providers></main> {/* <Providers>{children}</Providers> */}
       <Footer />
       <SpeedInsights/>
-    <Analytics />
+      <Analytics />
     </body>
   </html>
 )
