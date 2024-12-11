@@ -23,7 +23,7 @@ export const Analytics: React.FC = () => {
 
   return (
     <YMInitializer
-      accounts={[ 53836567 ]}
+      accounts={[ 99187796 ]}
       options={{
         webvisor: true,
         clickmap: true,
