@@ -114,6 +114,7 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
             className="flex gap-4 flex-col items-start w-full"
+            autoComplete="on"
           >
             <FormField
               control={form.control}
