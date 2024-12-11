@@ -1,6 +1,13 @@
+import type { Metadata } from 'next'
+
 import { Container } from '@/components/Container'
 import { Title } from '@/components/Title'
 import { Unlimited } from '@/components/Unlimited'
+
+export const metadata: Metadata = {
+  title: 'Цены | Yoga Club OM',
+  description: 'Текущее цены на занятия в клубе Yoga Club OM',
+}
 
 const PricesPage = () => {
   return <Container className="my-5 flex flex-col gap-5">

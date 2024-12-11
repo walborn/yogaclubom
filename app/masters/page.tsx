@@ -1,9 +1,16 @@
-import { Container } from '@/components/Container'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 
-import { masters } from './masters'
+import { Container } from '@/components/Container'
 import { Avatar } from '@/components/Avatar'
 import { Title } from '@/components/Title'
+
+import { masters } from './masters'
+
+export const metadata: Metadata = {
+  title: 'Инструкторы | Yoga Club OM',
+  description: 'Инструкторы, которые преподают в клубе Yoga Club OM',
+}
 
 
 const MastersPage = () => {

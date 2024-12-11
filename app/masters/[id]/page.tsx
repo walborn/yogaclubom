@@ -6,15 +6,38 @@ import { Title } from '@/components/Title'
 
 import masters from '../masters'
 
+import type { Metadata, ResolvingMetadata } from 'next'
+ 
 interface Props {
   params: Promise<{ id: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }
-const ProductPage = async (props: Props) => {
-  const params = await props.params
 
-  const {
-    id,
-  } = params
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+  // read route params
+  const id = (await params).id
+ 
+  const master = masters.get(id)
+  if (!master) return {}
+  
+  // fetch data
+  // const product = await fetch(`https://.../${id}`).then((res) => res.json())
+ 
+  // optionally access and extend (rather than replace) parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+ 
+  return {
+    title: `${master.name} | Yoga Club OM`,
+    openGraph: {
+      images: [`/images/avatar/${id}.jpg`, ...previousImages],
+    },
+  }
+}
+ 
+
+
+const ProductPage = async ({ params }: Props) => {
+  const id = (await params).id
 
   const master = masters.get(id)
   if (!master) return notFound()

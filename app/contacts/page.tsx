@@ -1,4 +1,4 @@
-'use client'
+import type { Metadata } from 'next'
 
 import { Container } from '@/components/Container'
 import { Email } from '@/components/icons/Email'
@@ -8,7 +8,13 @@ import { Telegram } from '@/components/icons/Telegram'
 import { Vkontakte } from '@/components/icons/Vkontakte'
 import { Whatsapp } from '@/components/icons/Whatsapp'
 import { File } from '@/components/icons/File'
-import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps'
+import { Map } from '@/components/Map'
+
+
+export const metadata: Metadata = {
+  title: 'Контакты | Yoga Club OM',
+  description: 'Как добраться до нашей його-студии',
+}
 
 const ContactsPage = () => {
   return (
@@ -20,7 +26,7 @@ const ContactsPage = () => {
               href="https://yandex.ru/maps/-/CCQlqKsMhD"
               className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
             >
-            м. Бибирево ул. Плещеева, д. 12А, 3 этаж
+              м. Бибирево ул. Плещеева, д. 12А, 3 этаж
             </Location>
           </li>
           <li>
@@ -81,27 +87,12 @@ const ContactsPage = () => {
           </li>
         </ul>
         <div className="w-full h-[350px] bg-[url('/images/map.jpg')] bg-no-repeat bg-center bg-cover">
-          <YMaps>
-            <Map
-              width="100%"
-              height="350px"
-              defaultState={{ center: [ 55.885832, 37.610907 ], zoom: 15 }}
-            >
-              <Placemark
-                geometry={[55.885832, 37.610907]}
-                defaultProperties={{
-                  hintContent: 'Расположение клуба ОМ',
-                  balloonContent: 'Йога клуб ОМ',
-                }}
-                options={{
-                  iconLayout: 'default#image',
-                  iconImageHref: '/icons/placemarkYandex.svg',
-                  iconImageSize: [ 60, 68 ],
-                  iconImageOffset: [ -30, -68 ],
-                }}
-              />
-            </Map>
-          </YMaps>
+          <Map
+            width="100%"
+            height="350px"
+            defaultState={{ center: [ 55.885832, 37.610907 ], zoom: 15 }}
+            placemark={[55.885832, 37.610907]}
+          />
         </div>
       </div>
     </Container>
