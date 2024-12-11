@@ -114,7 +114,6 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
             className="flex gap-4 flex-col items-start w-full"
-            autoComplete="on"
           >
             <FormField
               control={form.control}
@@ -122,7 +121,11 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
               render={({ field }) => (
                 <FormItem className="flex flex-col items-start w-full">
                   <FormControl className="w-full">
-                    <Input placeholder="Ваше имя" {...field} />
+                    <Input
+                      {...field}
+                      placeholder="Ваше имя"
+                      autoComplete="name"
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -136,8 +139,9 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
                 <FormItem className="flex flex-col items-start w-full">
                   <FormControl className="w-full">
                     <PhoneInput
-                      placeholder="Номер телефона"
                       {...field}
+                      placeholder="Номер телефона"
+                      autoComplete="phone"
                       defaultCountry="RU"
                     />
                   </FormControl>
