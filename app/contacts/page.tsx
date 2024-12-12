@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 const ContactsPage = () => {
   return (
-    <Container className="p-5">
+    <Container className="py-8 px-5">
       <div className="md:flex bg-white rounded shadow-light overflow-hidden mb-16">
         <ul className="md:shrink-0 md:h-full md:w-2/5 p-2">
           <li>

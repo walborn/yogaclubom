@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   keywords: [ 'аренда зала', 'аренда помещения', 'аренда класса' ],
 }
 
-const BookingPage = () => {
-  return <Container className="my-5 px-5 max-lg:overflow-hidden">
+const BookingPage = () => (
+  <Container className="my-8 px-5 max-lg:overflow-hidden">
     <p className="mb-5"><strong>Наши залы</strong> - это многофункциональные площадки,
       которые подойдут для различных занятий и мероприятий.
       Залы предназначены для проведения индивидуальных и групповых
@@ -36,6 +36,6 @@ const BookingPage = () => {
       
     <GymCarousel />
   </Container>
-}
+)
 
 export default BookingPage

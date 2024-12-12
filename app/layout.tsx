@@ -15,7 +15,7 @@ import { cn } from '@/lib/utils'
 const font = Open_Sans({ subsets: ['cyrillic'] })
   
 export const metadata: Metadata = {
-  title: 'YogaClubOM',
+  title: 'Yoga club OM',
   description: 'Yoga club OM',
   verification: { yandex: '1b46776c88d34ab0' },
 }

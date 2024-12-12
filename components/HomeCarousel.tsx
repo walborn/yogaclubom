@@ -13,7 +13,11 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 
-export const HomeCarousel: React.FC = () => {
+interface Props {
+  className?: string
+}
+
+export const HomeCarousel: React.FC<Props> = ({ className}) => {
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true }),
   )
@@ -22,7 +26,7 @@ export const HomeCarousel: React.FC = () => {
       plugins={[plugin.current]}
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
-      className="m-5 rounded"
+      className={className}
     >
       <CarouselContent>
         {[

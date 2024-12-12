@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: 'Текущее цены на занятия в клубе Yoga Club OM',
 }
 
-const PricesPage = () => {
-  return <Container className="my-5 flex flex-col gap-5">
+const PricesPage = () => (
+  <Container className="my-8 flex flex-col gap-5">
     <section className="px-5">
       <Title size="lg">Акция: 2 занятия по цене 1!</Title>
       <Unlimited />
@@ -64,6 +64,6 @@ const PricesPage = () => {
       </div>
     </section>
   </Container>
-}
+)
 
 export default PricesPage
