@@ -62,6 +62,7 @@ export const lessons = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
+    note: 'отмена 30 декабря',
   },
   {
     day: 'Пн',
@@ -178,6 +179,7 @@ export const lessons = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
+    note: 'отмена 28 декабря',
   },
   {
     day: 'Сб',
