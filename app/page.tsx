@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const HomePage: React.FC = () => (
   <Container className="max-lg:overflow-hidden max-md:mb-10">
-    <div className="whitespace-nowrap pl-3 mr-16 pt-1 pb-4 overflow-hidden">
+    <div className="whitespace-nowrap pl-3 mr-16 pt-1 pb-4 overflow-hidden md:hidden">
       <Location
         href="https://yandex.ru/maps/-/CCQlqKsMhD"
         className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
