@@ -71,6 +71,7 @@ export const lessons = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Наталья',
+    note: 'отмена 30 декабря',
   },
   {
     day: 'Вт',
