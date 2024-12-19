@@ -1,28 +1,31 @@
 export type Lesson = {
-  id: string;
+  id: string
   user: {
-    id: string;
-    name: string;
-    picture: string;
-  },
-  weekday: number;
-  time: number;
-  duration: number;
-  category: string;
-  title: string;
-  master: string;
-  alternate: string;
-  disabled: boolean;
-  hidden: boolean;
-  level: string;
-  room: number;
-  note?: string;
-  from: string;
-  to: string;
+    id: string
+    name: string
+    picture: string
+  }
+  weekday: number
+  time: number
+  duration: number
+  category: string
+  title: string
+  master: string
+  alternate: string
+  disabled: boolean
+  hidden: boolean
+  level: string
+  room: number
+  note?: string
+  from: string
+  to: string
 }
 
 export const weekdays = [ 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс' ]
-export const format = (minutes: number) => (mm => `${`0${(minutes - mm) / 60}`.slice(-2)}:${`0${mm}`.slice(-2)}`)(minutes % 60)
+export const format = (minutes: number) =>
+  ((mm) => `${`0${(minutes - mm) / 60}`.slice(-2)}:${`0${mm}`.slice(-2)}`)(
+    minutes % 60,
+  )
 // Получить номер текущего дня недели: 0 - Пн, ..., 6 - Вс
 export const getDay = () => {
   const now = new Date()
@@ -205,7 +208,8 @@ export const lessons = [
     title: 'Йога для беременных',
     level: 'Лёгкий',
     master: 'Надежда',
-    note: 'по предварительной записи',
+    // note: 'по предварительной записи',
+    note: 'отмена 22 декабря',
   },
   {
     day: 'Вс',
@@ -214,7 +218,8 @@ export const lessons = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Надежда',
-    note: 'по предварительной записи',
+    // note: 'по предварительной записи',
+    note: 'отмена 22 декабря',
   },
 ].map(({ day, time: from, duration, ...i }) => {
   const [ h, m ] = from.split(':').map(Number)
@@ -226,10 +231,9 @@ export const lessons = [
   return { ...i, id, time, from, to, weekday }
 }) as Lesson[]
 
-
 // Преобразуем список занятий в объект
 export const getLessons = (list: Lesson[]) => {
-  const lessons: Lesson[][] =  list
+  const lessons: Lesson[][] = list
     .reduce((r: Lesson[][], i: Lesson) => {
       if (!Array.isArray(r[i.weekday])) r[i.weekday] = []
       r[i.weekday].push(i)
@@ -247,8 +251,7 @@ export const getLessons = (list: Lesson[]) => {
     return 0
   }
 
-  return lessons.map(i => i.sort(compare))
+  return lessons.map((i) => i.sort(compare))
 }
-
 
 export default getLessons(lessons)
