@@ -30,9 +30,9 @@ export const HomeCarousel: React.FC<Props> = ({ className}) => {
     >
       <CarouselContent>
         {[
-          '/images/home/new_year_10.jpeg',
-          '/images/home/cancellation.jpeg',
-          '/images/home/new_year.jpeg',
+          // '/images/home/new_year_10.jpeg',
+          // '/images/home/cancellation.jpeg',
+          // '/images/home/new_year.jpeg',
           '/images/home/virabhadrasana.jpeg',
           '/images/home/healthy_back.jpeg',
           '/images/home/jeet_kune_do.jpeg',
