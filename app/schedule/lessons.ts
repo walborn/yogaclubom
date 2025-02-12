@@ -229,7 +229,8 @@ export const lessons = [
     title: 'Йога для беременных',
     level: 'Лёгкий',
     master: 'Надежда',
-    note: 'по предварительной записи',
+    // note: 'по предварительной записи',
+    note: '16 февраля отмена',
   },
   {
     day: 'Вс',
@@ -238,7 +239,8 @@ export const lessons = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Надежда',
-    note: 'по предварительной записи',
+    // note: 'по предварительной записи',
+    note: '16 февраля замена - Андрей',
   },
 ].map(({ day, time: from, duration, ...i }) => {
   const [ h, m ] = from.split(':').map(Number)
