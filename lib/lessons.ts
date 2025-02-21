@@ -11,7 +11,7 @@ export type Lesson = {
   category: string;
   title: string;
   master: string;
-  alternate: string;
+  alternate?: string;
   disabled: boolean;
   hidden: boolean;
   level: string;
