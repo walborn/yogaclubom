@@ -11,7 +11,7 @@ export type Lesson = {
   category: string
   title: string
   master: string
-  alternate: string
+  alternate?: string
   disabled: boolean
   hidden: boolean
   level: string
@@ -32,6 +32,9 @@ export const getDay = () => {
   const offset = (now.getTimezoneOffset() + 180) * 60 * 1000
   return (new Date(now.getTime() + offset).getDay() + 6) % 7
 }
+
+const today = new Date().toDateString()
+
 export const lessons = [
   {
     day: 'Пн',
@@ -81,7 +84,9 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    note: 'по предварительной записи',
+    // [ [2025, 1, 25], [2025, 2, 4] ].map(i => new Date(...i).toDateString())
+    alternate: ['Tue Feb 25 2025', 'Tue Mar 04 2025'].includes(today),
+    note: <>по предварительной записи<br />25.02, 04.03 замена Андрей</>,
   },
   {
     day: 'Вт',
@@ -143,7 +148,8 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    note: 'по предварительной записи',
+    alternate: ['Thu Feb 27 2025', 'Thu Mar 06 2025'].includes(today),
+    note: <>по предварительной записи<br />27.02, 06.03 замена Андрей</>,
     // note: 'отмена 2 января',
   },
   {
@@ -220,7 +226,8 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    note: 'по предварительной записи',
+    alternate: ['Sun Feb 23 2025', 'Sun Mar 02 2025', 'Sun Mar 09 2025'].includes(today),
+    note: <>по предварительной записи<br />23.02, 02.03, 09.03 замена Андрей</>,
   },
   {
     day: 'Вс',

@@ -59,7 +59,7 @@ export const Schedule = ({ lessons }: Props) => {
               <div className="text-[#468ee5] font-bold">{i.from} - {i.to}</div>
               <div>{i.title}</div>
               <div className="font-light">{i.master}</div>
-              <div>{i.alternate}</div>
+              {i.alternate && <div className="font-light text-brand-600">Сегодня замена</div>}
               <div>{i.level}</div>
               <div className="text-brand-300">{i.note}</div>
             </li>
