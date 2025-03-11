@@ -34,6 +34,8 @@ export const getDay = () => {
 }
 
 const today = new Date().toDateString()
+const isToday = (dates: string[]) => dates.includes(today)
+const isBefore = (date: string) => new Date(today).getTime() <= new Date(date).getTime()
 
 export const lessons = [
   {
@@ -85,8 +87,8 @@ export const lessons = [
     level: 'Любой',
     master: 'Алексей',
     // [ [2025, 1, 25], [2025, 2, 4] ].map(i => new Date(...i).toDateString())
-    alternate: ['Tue Feb 25 2025', 'Tue Mar 04 2025'].includes(today),
-    note: <>по предварительной записи<br />25.02, 04.03 замена Андрей</>,
+    // alternate: ['Tue Feb 25 2025', 'Tue Mar 04 2025'].includes(today),
+    // note: <>по предварительной записи<br />25.02, 04.03 замена Андрей</>,
   },
   {
     day: 'Вт',
@@ -148,8 +150,8 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    alternate: ['Thu Feb 27 2025', 'Thu Mar 06 2025'].includes(today),
-    note: <>по предварительной записи<br />27.02, 06.03 замена Андрей</>,
+    // alternate: ['Thu Feb 27 2025', 'Thu Mar 06 2025'].includes(today),
+    // note: <>по предварительной записи<br />27.02, 06.03 замена Андрей</>,
     // note: 'отмена 2 января',
   },
   {
@@ -210,6 +212,8 @@ export const lessons = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
+    alternate: isToday(['Sat Mar 15 2025']),
+    note: isBefore('Sat Mar 15 2025') ? '15 марта - замена, Андрей' : undefined,
   },
   {
     day: 'Сб',
@@ -218,6 +222,8 @@ export const lessons = [
     title: 'Здоровая спина (йога-терапия)',
     level: 'Лёгкий',
     master: 'Евгения',
+    alternate: isToday(['Sat Mar 15 2025']),
+    note: isBefore('Sat Mar 15 2025') ? '15 марта - замена, Надежда' : undefined,
   },
   {
     day: 'Вс',
@@ -226,8 +232,8 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    alternate: ['Sun Feb 23 2025', 'Sun Mar 02 2025', 'Sun Mar 09 2025'].includes(today),
-    note: <>по предварительной записи<br />23.02, 02.03, 09.03 замена Андрей</>,
+    // alternate: ['Sun Feb 23 2025', 'Sun Mar 02 2025', 'Sun Mar 09 2025'].includes(today),
+    // note: <>по предварительной записи<br />23.02, 02.03, 09.03 замена Андрей</>,
   },
   {
     day: 'Вс',
