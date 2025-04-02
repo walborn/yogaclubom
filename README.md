@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Yoga Club OM 🧘‍♀️
 
-## Getting Started
+A modern, responsive website for Yoga Club OM, a yoga studio in Moscow that has been helping people improve their lives through practice since 2014. This is a beautiful, performant web application built with cutting-edge technologies.
 
-First, run the development server:
+## 🌟 Features
 
+- Modern, responsive design optimized for all devices
+- Interactive class schedule
+- Location integration with Yandex Maps
+- Performance optimized with Next.js and Turbopack
+- Beautiful UI components built with Radix UI
+- Form handling with React Hook Form and Zod validation
+- Analytics integration with Google Analytics and Yandex Metrika
+- Email functionality with SendGrid
+- Carousel components for showcasing content
+- SEO optimized with Next.js metadata
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 15 with App Router
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **UI Components:** Radix UI
+- **Forms:** React Hook Form + Zod
+- **Maps:** Yandex Maps
+- **Analytics:** Google Analytics + Yandex Metrika
+- **Email:** SendGrid
+- **Performance:** Turbopack
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/yogaclubom.git
+cd yogaclubom
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or 
+bun install # recommended
+```
+
+3. Set up environment variables:
+Create a `.env.local` file in the root directory and add necessary environment variables (see `.env.example` for reference).
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
+# or 
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🤝 Contributing
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+We welcome contributions! Whether you're fixing bugs, improving documentation, or adding new features, we'd love to have you on board. Here's how you can help:
 
-## Learn More
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-To learn more about Next.js, take a look at the following resources:
+## 📝 License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is private and proprietary. All rights reserved.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 🌐 Live Demo
 
-## Deploy on Vercel
+Visit [yoga-club-om.ru](https://yoga-club-om.ru) to see the live website.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Built with ❤️ by the Yoga Club OM team

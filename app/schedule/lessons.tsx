@@ -214,8 +214,8 @@ export const lessons = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    alternate: isToday(['Sat Mar 15 2025']),
-    note: isBefore('Sat Mar 15 2025') ? '15 марта - замена, Андрей' : undefined,
+    // alternate: isToday(['Sat Mar 15 2025']),
+    // note: isBefore('Sat Mar 15 2025') ? '15 марта - замена, Андрей' : undefined,
   },
   {
     day: 'Сб',
@@ -224,8 +224,8 @@ export const lessons = [
     title: 'Здоровая спина (йога-терапия)',
     level: 'Лёгкий',
     master: 'Евгения',
-    alternate: isToday(['Sat Mar 15 2025']),
-    note: isBefore('Sat Mar 15 2025') ? '15 марта - замена, Надежда' : undefined,
+    // alternate: isToday(['Sat Mar 15 2025']),
+    // note: isBefore('Sat Mar 15 2025') ? '15 марта - замена, Надежда' : undefined,
   },
   {
     day: 'Вс',
