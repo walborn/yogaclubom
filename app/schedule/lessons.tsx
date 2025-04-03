@@ -33,9 +33,9 @@ export const getDay = () => {
   return (new Date(now.getTime() + offset).getDay() + 6) % 7
 }
 
-const today = new Date().toDateString()
-const isToday = (dates: string[]) => dates.includes(today)
-const isBefore = (date: string) => new Date(today).getTime() <= new Date(date).getTime()
+// const today = new Date().toDateString()
+// const isToday = (dates: string[]) => dates.includes(today)
+// const isBefore = (date: string) => new Date(today).getTime() <= new Date(date).getTime()
 
 export const lessons = [
   {

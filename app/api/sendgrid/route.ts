@@ -28,9 +28,9 @@ export async function POST(req: NextRequest) {
     return Response.json(
       { 
         type: 'failure', 
-        message: 'Failed to send message. Please try again later or contact us directly at +79168765413' 
+        message: 'Failed to send message. Please try again later or contact us directly at +79168765413',
       }, 
-      { status: 500 }
+      { status: 500 },
     )
   }
 }
