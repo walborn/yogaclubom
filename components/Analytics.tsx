@@ -23,7 +23,7 @@ export const Analytics: React.FC = () => {
 
   return (
     <YMInitializer
-      accounts={[process.env.NEXT_PUBLIC_YM_ID || 99187796]}
+      accounts={[Number(process.env.NEXT_PUBLIC_YM_ID) || 99187796]}
       options={{
         webvisor: true,
         clickmap: true,
