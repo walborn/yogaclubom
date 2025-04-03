@@ -13,8 +13,8 @@ export async function POST(req: NextRequest) {
   const { subject, name, phone } = await req.json() as Unlimited
   
   const content = {
-    to: 'codebor@yandex.ru',
-    from: 'yuzhakov.boris@gmail.com',
+    to: process.env.SENDGRID_TO_EMAIL || 'codebor@yandex.ru',
+    from: process.env.SENDGRID_FROM_EMAIL || 'yuzhakov.boris@gmail.com',
     subject,
     text: `${name} : ${phone}`,
     html: `<p><b>${name}</b> - <a href="tel:${phone}">${phone}</a></p>`,
@@ -24,6 +24,13 @@ export async function POST(req: NextRequest) {
     await sgMail.send(content)
     return Response.json({ type: 'success', message: 'Message sent successfully' })
   } catch (error) {
-    return Response.json({ error, type: 'failure', message: 'Something went wrong. Please, write message to +79168765413' }, { status: 500 })
+    console.error('SendGrid error:', error)
+    return Response.json(
+      { 
+        type: 'failure', 
+        message: 'Failed to send message. Please try again later or contact us directly at +79168765413' 
+      }, 
+      { status: 500 }
+    )
   }
 }

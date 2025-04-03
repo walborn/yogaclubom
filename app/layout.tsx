@@ -27,17 +27,16 @@ interface Props {
 
 const RootLayout: React.FC<Props> = ({ children }) => (
   <html lang="ru">
-    <head>
-      {/* <script src="https://unpkg.com/react-scan/dist/auto.global.js" async /> */}
-      {/* rest of your scripts go under */}
-    </head>
+    <head />
     <body className={cn('text-text flex flex-col min-h-screen', font.className)}>
       <Suspense>
         <Header />
       </Suspense>
-      <main className="flex-auto mt-5"><Providers>{children}</Providers></main> {/* <Providers>{children}</Providers> */}
+      <main className="flex-auto mt-5">
+        <Providers>{children}</Providers>
+      </main>
       <Footer />
-      <SpeedInsights/>
+      <SpeedInsights />
       <Analytics />
     </body>
   </html>
