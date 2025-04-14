@@ -17,7 +17,7 @@ interface Props {
   className?: string
 }
 
-export const HomeCarousel: React.FC<Props> = ({ className}) => {
+export const HomeCarousel: React.FC<Props> = ({ className }) => {
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true }),
   )
@@ -33,6 +33,7 @@ export const HomeCarousel: React.FC<Props> = ({ className}) => {
           // '/images/home/new_year_10.jpeg',
           // '/images/home/cancellation.jpeg',
           // '/images/home/new_year.jpeg',
+          '/images/home/may.jpeg',
           '/images/home/virabhadrasana.jpeg',
           '/images/home/healthy_back.jpeg',
           '/images/home/jeet_kune_do.jpeg',
