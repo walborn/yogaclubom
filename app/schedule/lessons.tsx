@@ -21,7 +21,7 @@ export type Lesson = {
   to: string
 }
 
-export const weekdays = [ 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс' ]
+export const weekdays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
 export const format = (minutes: number) =>
   ((mm) => `${`0${(minutes - mm) / 60}`.slice(-2)}:${`0${mm}`.slice(-2)}`)(
     minutes % 60,
@@ -257,13 +257,13 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Андрей',
-    // note: 'по предварительной записи',
-    note: '13 апреля - бесплатное открытое занятие',
+    note: 'по предварительной записи',
+    // note: '13 апреля - бесплатное открытое занятие',
   },
 ].map(({ day, time: from, duration, ...i }) => {
-  const [ h, m ] = from.split(':').map(Number)
+  const [h, m] = from.split(':').map(Number)
   const time = h * 60 + m
-  const weekday = [ 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс' ].indexOf(day)
+  const weekday = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'].indexOf(day)
 
   const id = `${day}-${time}-${i.master}-${i.title}`
   const to = format(time + duration)
