@@ -98,7 +98,7 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Средний',
     master: 'Нина',
-    note: '6 мая - отмена',
+    // note: '6 мая - отмена',
   },
   {
     day: 'Ср',
@@ -133,7 +133,7 @@ export const lessons = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    note: '1 мая начало в 11:00, 8 мая отмена',
+    note: '8 мая отмена',
     // note: 'отмена 2 января',
   },
   // {
@@ -156,7 +156,7 @@ export const lessons = [
     // note: 'по предварительной записи',
     // alternate: ['Thu Feb 27 2025', 'Thu Mar 06 2025'].includes(today),
     // note: <>по предварительной записи<br />27.02, 06.03 замена Андрей</>,
-    note: '1 и 8 мая отмена',
+    note: '8 мая отмена',
   },
   {
     day: 'Чт',
@@ -165,7 +165,7 @@ export const lessons = [
     title: 'Хатха-йога',
     level: 'Средний',
     master: 'Нина',
-    note: '1 и 8 мая отмена',
+    note: '8 мая отмена',
     // note: 'отмена 2 января',
   },
   {
@@ -175,7 +175,7 @@ export const lessons = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    note: '2 и 9 мая отмена',
+    note: '9 мая отмена',
   },
   {
     day: 'Пт',
@@ -184,7 +184,7 @@ export const lessons = [
     title: 'Аштанга-йога для начинающих',
     level: 'Средний',
     master: 'Ирина',
-    note: '2 и 9 мая отмена',
+    note: '9 мая отмена',
   },
   {
     day: 'Пт',
@@ -193,7 +193,7 @@ export const lessons = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Наталья',
-    note: '2 и 9 мая отмена',
+    note: '9 мая отмена',
   },
   {
     day: 'Сб',
@@ -203,7 +203,7 @@ export const lessons = [
     level: 'Любой',
     master: 'Сергей',
     // note: 'по предварительной записи',
-    note: '3 и 10 мая отмена',
+    note: '10 мая отмена',
   },
   {
     day: 'Сб',
@@ -212,7 +212,7 @@ export const lessons = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    note: '3 и 10 мая отмена',
+    note: '10 мая отмена',
   },
   {
     day: 'Сб',
@@ -221,7 +221,7 @@ export const lessons = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    note: '3 и 10 мая отмена',
+    note: '10 мая отмена',
     // alternate: isToday(['Sat Mar 15 2025']),
     // note: isBefore('Sat Mar 15 2025') ? '15 марта - замена, Андрей' : undefined,
   },
