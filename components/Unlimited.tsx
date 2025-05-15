@@ -70,12 +70,12 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
       title: 'Что-то пошло не так',
       description: (
         <div>
-        Повторите попытку позже или позвоните по телефону 
+          Повторите попытку позже или позвоните по телефону
           <Phone
             href="tel:+79168765413"
-            className="whitespace-nowrap [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+            className="whitespace-nowrap [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
           >
-          +7 (916) 876-54-13
+            +7 (916) 876-54-13
           </Phone>
         </div>
       ),
@@ -87,11 +87,11 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
         <div className="text-center">
           <strong className="whitespace-nowrap">🎉 Вы успешно записались на акцию</strong><br />
           <b className="text-2xl">&quot;2 занятия по цене 1&quot;</b><br />
-        В скором времени мы с Вами свяжемся для подтверждения участия!
+          В скором времени мы с Вами свяжемся для подтверждения участия!
         </div>
       ),
     }
-    
+
     if (status === 200) {
       update(success)
       form.reset()
@@ -131,7 +131,7 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
                 </FormItem>
               )}
             />
-      
+
             <FormField
               control={form.control}
               name="phone"
@@ -150,7 +150,7 @@ export const Unlimited: React.FC<Props> = ({ className }) => {
               )}
             />
             <Button
-              className="mt-2 bg-brand-400 hover:bg-brand-400/90 w-full"
+              className="mt-2 bg-brand-400-hovered w-full cursor-pointer"
               type="submit"
               disabled={!form.getFieldState('phone').isDirty}
             >

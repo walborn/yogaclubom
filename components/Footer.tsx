@@ -14,7 +14,7 @@ import { Phone } from '@/components/icons/Phone'
 import { Vkontakte } from './icons/Vkontakte'
 
 interface Props {
-  className?: string;
+  className?: string
 }
 
 export const Footer: React.FC<Props> = ({ className }) => {
@@ -27,11 +27,11 @@ export const Footer: React.FC<Props> = ({ className }) => {
 
         <div className="inline-flex gap-3">
           <Vkontakte
-            className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-6 [&>svg]:fill-brand-400"
+            className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-6 fill-brand-400"
             href="https://vk.com/yoga.altufyevo"
           />
           <Telegram
-            className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-6 [&>svg]:fill-brand-400"
+            className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-6 fill-brand-400"
             href="https://t.me/yogaclub_om_moscow"
           />
         </div>
@@ -39,58 +39,58 @@ export const Footer: React.FC<Props> = ({ className }) => {
           <li>
             <Location
               href="https://yandex.ru/maps/-/CCQlqKsMhD"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             >
-                м. Бибирево ул. Плещеева, д. 12А, 3 этаж
+              м. Бибирево ул. Плещеева, д. 12А, 3 этаж
             </Location>
           </li>
           <li className="relative">
             <Phone
               href="tel:+79168765413"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             >
               +7 (916) 876-54-13
             </Phone>
             <Whatsapp
               href="https://wa.me/79168765413"
-              className="ml-2 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
+              className="ml-2 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
             />
             <Telegram
               href="tg://resolve?domain=yoga_club_om"
-              className="ml-6 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
+              className="ml-6 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
             />
           </li>
-        
+
           <li>
             <Email
               href="mailto:yoga-club-om@yandex.ru?subject=Запись"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             >
-                yoga-club-om@yandex.ru
+              yoga-club-om@yandex.ru
             </Email>
           </li>
           <li>
             <Vkontakte
               href="https://vk.com/yoga.altufyevo"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             >
-                Вконтакте
+              Вконтакте
             </Vkontakte>
           </li>
           <li>
             <Telegram
               href="https://t.me/yogaclub_om_moscow"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             >
-                Telegram
+              Telegram
             </Telegram>
           </li>
           <li>
             <File
               href="/docs/public-offer-agreement__yoga-club-om.pdf"
-              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             >
-                Договор оферты
+              Договор оферты
             </File>
           </li>
         </ul>

@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils'
 
 interface Props {
-  className?: string;
-  children?: React.ReactNode;
+  className?: string
+  children?: React.ReactNode
 }
 
 export const Container: React.FC<Props> = ({ className, children }) => (

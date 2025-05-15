@@ -18,12 +18,12 @@ const HomePage: React.FC = () => (
     <div className="whitespace-nowrap pl-3 mr-16 pt-1 pb-4 overflow-hidden md:hidden">
       <Location
         href="https://yandex.ru/maps/-/CCQlqKsMhD"
-        className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 [&>svg]:fill-brand-400"
+        className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
       >
         <span className="sm:inline">м.&nbsp;Бибирево, ул.&nbsp;Плещеева&nbsp;д.12А, 3&nbsp;этаж</span>
       </Location>
     </div>
-    <HomeCarousel className="m-2 rounded"/>
+    <HomeCarousel className="m-2 rounded" />
     <div className="mx-4 my-5 flex flex-col gap-8">
       <section>
         <strong>Наш клуб</strong> - это сообщество увлеченных людей,

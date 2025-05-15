@@ -15,15 +15,15 @@ interface Props {
   lessons: Lesson[][]
 }
 export const Schedule = ({ lessons }: Props) => {
-  const [ day, setDay ] = React.useState(getDay())
-  const [ view, setView ] = React.useState('day') // day or week
+  const [day, setDay] = React.useState(getDay())
+  const [view, setView] = React.useState('day') // day or week
 
   const table = lessons.reduce((r: Row[], dayLessons: Lesson[], weekday: number) => {
     dayLessons.forEach((lesson: Lesson) => {
       const hour: number = lesson.time / 60 | 0
-      if (!r[hour]) r[hour] = { [weekday]: [ lesson ] }
-      else if (!Array.isArray(r[hour][weekday])) r[hour][weekday] = [ lesson ]
-      else r[hour][weekday] = [ ...r[hour][weekday], lesson ]
+      if (!r[hour]) r[hour] = { [weekday]: [lesson] }
+      else if (!Array.isArray(r[hour][weekday])) r[hour][weekday] = [lesson]
+      else r[hour][weekday] = [...r[hour][weekday], lesson]
     })
     return r
   }, [])
@@ -31,7 +31,7 @@ export const Schedule = ({ lessons }: Props) => {
   if (view === 'day') return (
     <Container className={'text-center p-5'}>
       <Button
-        className="mb-5 bg-brand-400 hover:bg-brand-400/90"
+        className="mb-5 bg-brand-400-hovered cursor-pointer"
         onClick={() => setView('week')}
       >
         Показать всю неделю
@@ -47,7 +47,7 @@ export const Schedule = ({ lessons }: Props) => {
               {weekday}
             </li>
           ))
-        } 
+        }
       </ul>
       <ul>
         {
@@ -75,10 +75,10 @@ export const Schedule = ({ lessons }: Props) => {
           className="mt-5 bg-brand-400 hover:bg-brand-400/90"
           onClick={() => setView('day')}
         >
-        Показать один день
+          Показать один день
         </Button>
       </Container>
-      
+
       <Container
         className="text-center p-5 max-w-full overflow-x-scroll"
       >
@@ -110,7 +110,7 @@ export const Schedule = ({ lessons }: Props) => {
                 >
                   <td className="p-2">{index}</td>
                   {
-                    [ 0, 1, 2, 3, 4, 5, 6 ].map(weekday => (
+                    [0, 1, 2, 3, 4, 5, 6].map(weekday => (
                       <td
                         key={weekday}
                         className={cn(weekday === day && 'bg-[#fbe1c222]', 'cursor-pointer font-semibold p-2')}

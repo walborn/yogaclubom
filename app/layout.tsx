@@ -13,7 +13,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 
 const font = Open_Sans({ subsets: ['cyrillic'] })
-  
+
 export const metadata: Metadata = {
   title: 'Yoga club OM',
   description: 'Yoga club OM',
@@ -28,7 +28,7 @@ interface Props {
 const RootLayout: React.FC<Props> = ({ children }) => (
   <html lang="ru">
     <head />
-    <body className={cn('text-text flex flex-col min-h-screen', font.className)}>
+    <body className={cn('bg text-text flex flex-col min-h-screen', font.className)}>
       <Suspense>
         <Header />
       </Suspense>
