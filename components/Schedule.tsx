@@ -2,11 +2,12 @@
 
 import React from 'react'
 
-import { Container } from '@/components/Container'
-import { getDay, weekdays } from '@/lib/lessons'
-import type { Lesson } from '@/lib/lessons'
-import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+
+import { Container } from '@/components/Container'
+import { getNowDay, WEEKDAYS as weekdays, format } from '@/lib/placeholder.lessons'
+import type { Lesson } from '@/lib/definitions'
+import { Button } from '@/components/ui/button'
 
 
 type Row = Record<string, Lesson[]>
@@ -14,20 +15,22 @@ type Row = Record<string, Lesson[]>
 interface Props {
   lessons: Lesson[][]
 }
+
 export const Schedule = ({ lessons }: Props) => {
-  const [day, setDay] = React.useState(getDay())
+  const [day, setDay] = React.useState(getNowDay())
   const [view, setView] = React.useState('day') // day or week
 
   const table = lessons.reduce((r: Row[], dayLessons: Lesson[], weekday: number) => {
     dayLessons.forEach((lesson: Lesson) => {
-      const hour: number = lesson.time / 60 | 0
+      const hour: number = lesson.from / 60 | 0
       if (!r[hour]) r[hour] = { [weekday]: [lesson] }
       else if (!Array.isArray(r[hour][weekday])) r[hour][weekday] = [lesson]
       else r[hour][weekday] = [...r[hour][weekday], lesson]
     })
     return r
-  }, [])
+  }, []).map((i: Row, hour: number) => ({ hour, row: i }))
 
+  console.log(333, table)
   if (view === 'day') return (
     <Container className={'text-center p-5'}>
       <Button
@@ -56,12 +59,15 @@ export const Schedule = ({ lessons }: Props) => {
               key={i.id}
               className="p-5 my-3 rounded-md shadow-light"
             >
-              <div className="text-[#468ee5] font-bold">{i.from} - {i.to}</div>
+              <div className="text-[#468ee5] font-bold">{format(i.from)} - {format(i.to)}</div>
               <div>{i.title}</div>
               <div className="font-light">{i.master}</div>
-              {i.alternate && <div className="font-light text-brand-600">Сегодня замена</div>}
+              {/* {i.alternate && <div className="font-light text-brand-600">Сегодня замена</div>} */}
               <div>{i.level}</div>
-              <div className="text-brand-300">{i.note}</div>
+
+              <div className="text-brand-300">
+                {i.notes.map(note => <div key={note}>{note}</div>)}
+              </div>
             </li>
           ))
         }
@@ -103,12 +109,12 @@ export const Schedule = ({ lessons }: Props) => {
           </thead>
           <tbody>
             {
-              table.map((row: Row, index: number) => (
+              table.filter(Boolean).map(({ hour, row }: { hour: number, row: Row }, index: number) => (
                 <tr
                   key={index}
-                  className={cn(index % 2 && 'bg-[#8a78730d]')}
+                  className={cn(index % 2 === 0 && 'bg-[#8a78730d]')}
                 >
-                  <td className="p-2">{index}</td>
+                  <td className="p-2">{hour}</td>
                   {
                     [0, 1, 2, 3, 4, 5, 6].map(weekday => (
                       <td
@@ -117,7 +123,7 @@ export const Schedule = ({ lessons }: Props) => {
                       >
                         <ul>
                           {
-                            row[weekday]?.filter((i: Lesson) => !i.hidden)?.map((i: Lesson) => (
+                            row[weekday]?.map((i: Lesson) => (
                               <li
                                 key={i.id}
                                 className="p-5 my-3 rounded-md shadow-light"
@@ -125,9 +131,11 @@ export const Schedule = ({ lessons }: Props) => {
                                 <div className="text-[#468ee5] font-bold">{i.from} - {i.to}</div>
                                 <div>{i.title}</div>
                                 <div className="font-light">{i.master}</div>
-                                <div>{i.alternate}</div>
+                                {/* <div>{i.alternate}</div> */}
                                 <div>{i.level}</div>
-                                <div className="text-brand-300 font-normal">{i.note}</div>
+                                <div className="text-brand-300 font-normal">
+                                  {i.notes.map(note => <div key={note}>{note}</div>)}
+                                </div>
                               </li>
                             ))
                           }
@@ -142,6 +150,5 @@ export const Schedule = ({ lessons }: Props) => {
         </table>
       </Container>
     </>
-
   )
 }
