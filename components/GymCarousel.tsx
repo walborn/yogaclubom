@@ -1,6 +1,7 @@
 'use client'
 
 import Autoplay from 'embla-carousel-autoplay'
+import Image from 'next/image'
 import React from 'react'
 
 import { Card, CardContent } from '@/components/ui/card'
@@ -34,7 +35,7 @@ export const GymCarousel: React.FC = () => {
           <CarouselItem key={imageUrl}>
             <Card>
               <CardContent className="flex p-0 aspect-video items-center justify-center">
-                <img src={imageUrl} className="w-full rounded-lg" alt={imageUrl} />
+                <Image src={imageUrl} className="rounded-lg" width={900} height={600} alt={imageUrl} />
               </CardContent>
             </Card>
           </CarouselItem>

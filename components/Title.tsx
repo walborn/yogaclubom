@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { montserrat } from '@/components/ui/fonts'
 import { cn } from '@/lib/utils'
 
 type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
@@ -32,7 +33,7 @@ export const Title: React.FC<Props> = ({ className, children, size }) => {
   const Hn = tags[size]
 
   return (
-    <Hn className={cn('text-center text-brand', classNames[size], className)}>
+    <Hn className={cn(montserrat.className,'antialiased text-center text-brand', classNames[size], className)}>
       {children}
     </Hn>
   )
