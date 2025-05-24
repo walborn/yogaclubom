@@ -1,9 +1,8 @@
 'use client'
 
 import React from 'react'
-
-import { YMInitializer } from 'react-yandex-metrika'
 import ReactGA from 'react-ga'
+import { YMInitializer } from 'react-yandex-metrika'
 
 declare global {
   interface Window {

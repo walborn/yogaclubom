@@ -1,5 +1,5 @@
-import { NextRequest } from 'next/server'
 import sgMail from '@sendgrid/mail'
+import { NextRequest } from 'next/server'
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 

@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 
 import { Container } from '@/components/Container'
 import { Email } from '@/components/icons/Email'
+import { File } from '@/components/icons/File'
 import { Location } from '@/components/icons/Location'
 import { Phone } from '@/components/icons/Phone'
 import { Telegram } from '@/components/icons/Telegram'
 import { Vkontakte } from '@/components/icons/Vkontakte'
 import { Whatsapp } from '@/components/icons/Whatsapp'
-import { File } from '@/components/icons/File'
 import { Map } from '@/components/Map'
 
 

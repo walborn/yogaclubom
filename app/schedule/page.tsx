@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 
 import { Container } from '@/components/Container'
 import { Schedule } from '@/components/Schedule'
-
 import lessons from '@/lib/placeholder.lessons'
 
 export const metadata: Metadata = {

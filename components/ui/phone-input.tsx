@@ -1,7 +1,9 @@
-import * as React from 'react'
 import { CheckIcon   } from 'lucide-react'
+import * as React from 'react'
 import * as RPNInput from 'react-phone-number-input'
 import flags from 'react-phone-number-input/flags'
+
+import { ScrollArea } from './scroll-area'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -18,9 +20,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover'
-
 import { cn } from '@/lib/utils'
-import { ScrollArea } from './scroll-area'
 
 flags.RU = () => <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6"><path fill="#fff" d="M0 0h9v3H0z"/><path fill="#DA291C" d="M0 3h9v3H0z"/><path fill="#0032A0" d="M0 2h9v2H0z"/></svg>
 

@@ -1,19 +1,18 @@
 'use client'
 
-import React from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-
+import React from 'react'
 import Headroom from 'react-headroom'
 
-import { cn } from '@/lib/utils'
 import { Container } from '@/components/Container'
-import { Telegram } from '@/components/icons/Telegram'
 import { Location } from '@/components/icons/Location'
-import { Whatsapp } from '@/components/icons/Whatsapp'
 import { Phone } from '@/components/icons/Phone'
+import { Telegram } from '@/components/icons/Telegram'
+import { Whatsapp } from '@/components/icons/Whatsapp'
+import { cn } from '@/lib/utils'
 
 const navigation = [
   { key: '', href: '', title: 'Главная' },

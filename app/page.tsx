@@ -1,12 +1,11 @@
+import type { Metadata } from 'next'
 import React from 'react'
 
-import type { Metadata } from 'next'
-
 import { Container } from '@/components/Container'
-import { Title } from '@/components/Title'
-import { Unlimited } from '@/components/Unlimited'
 import { HomeCarousel } from '@/components/HomeCarousel'
 import { Location } from '@/components/icons/Location'
+import { Title } from '@/components/Title'
+import { Unlimited } from '@/components/Unlimited'
 
 export const metadata: Metadata = {
   title: 'Главная | Yoga Club OM',

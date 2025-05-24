@@ -1,10 +1,10 @@
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
 import pluginJs from '@eslint/js'
 import pluginNext from '@next/eslint-plugin-next'
+import pluginImport from 'eslint-plugin-import'
 import pluginReact from 'eslint-plugin-react'
 import pluginHooks from 'eslint-plugin-react-hooks'
-
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 const ignores = [
   '.next',
@@ -62,6 +62,32 @@ const next = {
   },
 }
 
+const imports = {
+  name: 'import/order',
+  plugins: {
+    import: pluginImport,
+  },
+  rules: {
+    'import/order': [
+      'error',
+      {
+        groups: [
+          'builtin',    // 1. Встроенные модули (node:fs, path и т. д.)
+          'external',   // 2. Внешние зависимости (react, next, lodash)
+          'internal',   // 3. Внутренние пути (@/components, @/lib)
+          ['parent', 'sibling'], // 4. Родительские и соседние файлы
+          'index',      // 5. index-файлы
+        ],
+        'newlines-between': 'always', // Пустые строки между группами
+        alphabetize: {
+          order: 'asc', // Сортировка от A-Z
+          caseInsensitive: true,
+        },
+      },
+    ],
+  },
+}
+
 const custom =   {
   name: 'custom',
   rules: {
@@ -86,5 +112,6 @@ export default tseslint.config(
   react,
   hooks,
   next,
+  imports,
   custom,
 )

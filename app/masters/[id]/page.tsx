@@ -1,12 +1,13 @@
+import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
-
-import { Container } from '@/components/Container'
-import { Avatar } from '@/components/Avatar'
-import { Title } from '@/components/Title'
 
 import masters from '../masters'
 
-import type { Metadata, ResolvingMetadata } from 'next'
+import { Avatar } from '@/components/Avatar'
+import { Container } from '@/components/Container'
+import { Title } from '@/components/Title'
+
+
  
 interface Props {
   params: Promise<{ id: string }>

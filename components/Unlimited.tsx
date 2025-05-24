@@ -1,14 +1,15 @@
 'use client'
 
+import { zodResolver } from '@hookform/resolvers/zod'
+import { LoaderCircle } from 'lucide-react'
 import React from 'react'
+import { useForm } from 'react-hook-form'
+import { isValidPhoneNumber } from 'react-phone-number-input'
+import { z } from 'zod'
 
-import { cn } from '@/lib/utils'
-import { Input } from '@/components/ui/input'
+import { Phone } from '@/components/icons/Phone'
 import { List } from '@/components/List'
 import { Button } from '@/components/ui/button'
-import { Phone } from '@/components/icons/Phone'
-import { LoaderCircle } from 'lucide-react'
-
 import {
   Form,
   FormControl,
@@ -16,12 +17,10 @@ import {
   FormItem,
   FormMessage,
 } from '@/components/ui/form'
+import { Input } from '@/components/ui/input'
 import { PhoneInput } from '@/components/ui/phone-input'
 import { useToast, ToasterToast } from '@/hooks/use-toast'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm } from 'react-hook-form'
-import { isValidPhoneNumber } from 'react-phone-number-input'
-import { z } from 'zod'
+import { cn } from '@/lib/utils'
 
 const FormSchema = z.object({
   name: z

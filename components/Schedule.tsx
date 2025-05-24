@@ -2,12 +2,11 @@
 
 import React from 'react'
 
-import { cn } from '@/lib/utils'
-
 import { Container } from '@/components/Container'
-import { getNowDay, WEEKDAYS as weekdays, format } from '@/lib/placeholder.lessons'
-import type { Lesson } from '@/lib/definitions'
 import { Button } from '@/components/ui/button'
+import type { Lesson } from '@/lib/definitions'
+import { getNowDay, WEEKDAYS as weekdays, format } from '@/lib/placeholder.lessons'
+import { cn } from '@/lib/utils'
 
 
 type Row = Record<string, Lesson[]>
@@ -30,7 +29,6 @@ export const Schedule = ({ lessons }: Props) => {
     return r
   }, []).map((i: Row, hour: number) => ({ hour, row: i }))
 
-  console.log(333, table)
   if (view === 'day') return (
     <Container className={'text-center p-5'}>
       <Button

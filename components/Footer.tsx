@@ -1,17 +1,18 @@
-import React from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
-import { cn } from '@/lib/utils'
+import { Vkontakte } from './icons/Vkontakte'
+
 import { Container } from '@/components/Container'
-import { Telegram } from '@/components/icons/Telegram'
-import { Location } from '@/components/icons/Location'
-import { Whatsapp } from '@/components/icons/Whatsapp'
 import { Email } from '@/components/icons/Email'
 import { File } from '@/components/icons/File'
+import { Location } from '@/components/icons/Location'
 import { Phone } from '@/components/icons/Phone'
-import { Vkontakte } from './icons/Vkontakte'
+import { Telegram } from '@/components/icons/Telegram'
+import { Whatsapp } from '@/components/icons/Whatsapp'
+import { cn } from '@/lib/utils'
 
 interface Props {
   className?: string
