@@ -126,10 +126,9 @@ export const Schedule = ({ lessons }: Props) => {
                                 key={i.id}
                                 className="p-5 my-3 rounded-md shadow-light"
                               >
-                                <div className="text-[#468ee5] font-bold">{i.from} - {i.to}</div>
+                                <div className="text-[#468ee5] font-bold">{format(i.from)} - {format(i.to)}</div>
                                 <div>{i.title}</div>
                                 <div className="font-light">{i.master}</div>
-                                {/* <div>{i.alternate}</div> */}
                                 <div>{i.level}</div>
                                 <div className="text-brand-300 font-normal">
                                   {i.notes.map(note => <div key={note}>{note}</div>)}
