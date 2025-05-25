@@ -35,7 +35,7 @@ export const GymCarousel: React.FC = () => {
           <CarouselItem key={imageUrl}>
             <Card>
               <CardContent className="flex p-0 aspect-video items-center justify-center">
-                <Image src={imageUrl} className="rounded-lg" width={900} height={600} alt={imageUrl} />
+                <Image src={imageUrl} className="rounded-lg" width={900} height={600} alt={imageUrl} priority />
               </CardContent>
             </Card>
           </CarouselItem>

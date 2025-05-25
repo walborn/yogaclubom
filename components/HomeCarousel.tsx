@@ -44,7 +44,7 @@ export const HomeCarousel: React.FC<Props> = ({ className }) => {
           <CarouselItem key={imageUrl}>
             <Card>
               <CardContent className="flex p-0 aspect-auto items-center justify-center">
-                <Image src={imageUrl} className="rounded-lg" width={900} height={450} alt={imageUrl} />
+                <Image priority src={imageUrl} className="rounded-lg" width={900} height={450} alt={imageUrl} />
               </CardContent>
             </Card>
           </CarouselItem>
