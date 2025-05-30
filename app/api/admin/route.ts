@@ -1,5 +1,5 @@
 // TODO: Update once server-side API methods are implemented for pages router again
-import { NextApiRequest, NextApiResponse } from 'next'
+// import { NextApiRequest, NextApiResponse } from 'next'
 import { NextResponse } from 'next/server'
  
 import { auth } from '@/auth'
