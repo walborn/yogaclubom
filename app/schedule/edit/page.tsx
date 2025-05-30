@@ -2,13 +2,12 @@ import { SessionProvider } from 'next-auth/react'
 
 import { auth } from '@/auth'
 import { Container } from '@/components/Container'
-// import Breadcrumbs from '@/components/ui/breadcrumbs'
 import { UserButton } from '@/components/UserButton'
 import { Week } from '@/components/Week'
-import { fetchLessons } from '@/lib/data'
+import api from '@/lib/api'
  
 export default async function Page() {
-  const lessons = await fetchLessons()
+  const lessons = await api.lessons.list()
   const session = await auth()
 
   if (!session) return <div>Not authenticated</div>

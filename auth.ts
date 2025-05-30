@@ -4,7 +4,7 @@ import Credentials from 'next-auth/providers/credentials'
 // import GitHub from 'next-auth/providers/github'
 import { z } from 'zod'
 
-import { getUser } from '@/app/api/user/route'
+import api from '@/lib/api'
 // import { signInSchema } from '@/lib/zod'
  
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -27,7 +27,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
  
         if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data
-          const user = await getUser(email)
+          const user = await api.users.get(email)
           if (!user) return null
           const passwordsMatch = await bcryptjs.compare(password, user.password)
  
@@ -42,7 +42,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       //   try {
       //     const { email, password } = await signInSchema.parseAsync(credentials)
 
-      //     const user = await getUser(email)
+      //     const user = await api.users.get(email)
       //     if (!user) throw new Error('Invalid credentials (email)')
 
       //     console.log(222, password, user.password)

@@ -6,10 +6,9 @@ import { redirect } from 'next/navigation'
 import { AuthError } from 'next-auth'
 import { z } from 'zod'
 
-import api from '@/app/api/lesson/route'
 import { signIn } from '@/auth'
+import api from '@/lib/api'
 import { minutes } from '@/lib/placeholder.lessons'
-
 
 const LessonSchema = z.object({
   id: z.string(),
@@ -40,7 +39,6 @@ export type State = {
 }
  
 export async function createLesson(prevState: State, formData: FormData) {
-  // const { weekday, title, start, finish, master, level, notes } = CreateLessonSchema.parse({
   const validatedFields = CreateLessonSchema.safeParse({
     title: formData.get('title'),
     weekday: formData.get('weekday'),
