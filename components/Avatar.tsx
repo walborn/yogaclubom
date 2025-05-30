@@ -1,7 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import React from 'react'
+
+import Image from 'next/image'
 
 import { cn } from '@/lib/utils'
 
@@ -14,6 +15,6 @@ interface Props {
 
 export const Avatar: React.FC<Props> = ({ className, src, alt }) => {
   return (
-    <Image className={cn('rounded-full', className)} src={src} alt={alt} width={200} height={200}/>
+    <Image priority className={cn('rounded-full', className)} src={src} alt={alt} width={200} height={200}/>
   )
 }

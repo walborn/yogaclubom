@@ -1,8 +1,10 @@
 'use client'
 
-import Autoplay from 'embla-carousel-autoplay'
-import Image from 'next/image'
 import React from 'react'
+
+import Image from 'next/image'
+
+import Autoplay from 'embla-carousel-autoplay'
 
 import { Card, CardContent } from '@/components/ui/card'
 import {

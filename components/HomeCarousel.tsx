@@ -1,8 +1,10 @@
 'use client'
 
-import Autoplay from 'embla-carousel-autoplay'
-import Image from 'next/image'
 import React from 'react'
+
+import Image from 'next/image'
+
+import Autoplay from 'embla-carousel-autoplay'
 
 import { Card, CardContent } from '@/components/ui/card'
 import {
@@ -30,10 +32,6 @@ export const HomeCarousel: React.FC<Props> = ({ className }) => {
     >
       <CarouselContent>
         {[
-          // '/images/home/new_year_10.jpeg',
-          // '/images/home/cancellation.jpeg',
-          // '/images/home/new_year.jpeg',
-          // '/images/home/may.jpeg',
           '/images/home/birthday.jpeg',
           '/images/home/virabhadrasana.jpeg',
           '/images/home/healthy_back.jpeg',

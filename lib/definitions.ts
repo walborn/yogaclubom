@@ -1,17 +1,24 @@
+export type User = {
+  id: string;
+  name: string
+  email: string
+  password: string
+}
+
 export type Lesson = {
   id: string
-  weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
-  from: number // in minutes
-  to: number // in minutes
+  weekday: number //0 | 1 | 2 | 3 | 4 | 5 | 6
+  start: number // in minutes
+  finish: number // in minutes
   title: string
   master: string
   level: string
-  notes: string[]
+  notes: string
 }
 
 export type WeekDay = 'Пн' | 'Вт' | 'Ср' | 'Чт' | 'Пт' | 'Сб' | 'Вс'
 export type WeekDayIndex = 0 | 1 | 2 | 3 | 4 | 5 | 6
-// export type Level = 'Любой' | 'Лёгкий' | 'Средний' | 'Сложный' | '5-14 лет'
+
 export type HumanLesson = {
   id?: string
   day: WeekDay
@@ -19,6 +26,6 @@ export type HumanLesson = {
   duration: number // in minutes
   title: string
   master: string
-  level: string // Level
-  notes: string[]
+  level: string
+  notes: string
 }

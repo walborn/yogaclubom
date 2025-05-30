@@ -1,13 +1,14 @@
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import type { Metadata } from 'next'
 import { Suspense } from 'react'
+
+import type { Metadata } from 'next'
+
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 import { Analytics } from '@/components/Analytics'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { Providers } from '@/components/Providers'
 import { opensans as font } from '@/components/ui/fonts'
-
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -25,12 +26,15 @@ const RootLayout: React.FC<Props> = ({ children }) => (
   <html lang="ru">
     <head />
     <body className={`${font.className} antialiased bg text-text flex flex-col min-h-screen`}>
+     
       <Suspense>
         <Header />
       </Suspense>
+      
       <main className="flex-auto mt-5">
         <Providers>{children}</Providers>
       </main>
+      
       <Footer />
       <SpeedInsights />
       <Analytics />

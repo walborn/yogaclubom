@@ -13,6 +13,12 @@ export const weekdays: Record<WeekDay, WeekDayIndex> = {
 export const WEEKDAYS: WeekDay[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
 
 export const format = (minutes: number) => (mm => `${`0${(minutes - mm) / 60}`.slice(-2)}:${`0${mm}`.slice(-2)}`)(minutes % 60)
+export const minutes = (time?: string) => {
+  if (!time) return 0
+  const [h, m] = time.split(':').map(Number)
+  return h * 60 + m
+}
+
 // Получить номер текущего дня недели: 0 - Пн, ..., 6 - Вс
 export const getNowDay = () => {
   const now = new Date()
@@ -33,7 +39,7 @@ export const getLessons = (list: Lesson[]) => {
   // то сначала те, которые раньше заканчиваются
   // то есть если два занятия начинаются в одно и то же время,
   // то первым будет то, которое раньше заканчивается
-  const compare = (a: Lesson, b: Lesson) => a.from - b.from || a.to - b.to
+  const compare = (a: Lesson, b: Lesson) => a.start - b.start || a.finish - b.finish
 
   return Lessons.map(i => i.sort(compare))
 }
@@ -47,7 +53,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Пн',
@@ -56,7 +62,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Пн',
@@ -65,7 +71,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Пн',
@@ -74,7 +80,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Наталья',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Вт',
@@ -83,7 +89,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Вт',
@@ -92,7 +98,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога',
     level: 'Средний',
     master: 'Нина',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Ср',
@@ -101,7 +107,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Ср',
@@ -110,7 +116,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Чт',
@@ -119,7 +125,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Чт',
@@ -128,7 +134,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Чт',
@@ -137,7 +143,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога',
     level: 'Средний',
     master: 'Нина',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Пт',
@@ -146,7 +152,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Пт',
@@ -155,7 +161,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Аштанга-йога для начинающих',
     level: 'Средний',
     master: 'Ирина',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Пт',
@@ -164,7 +170,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Наталья',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Сб',
@@ -173,7 +179,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Общая физическая подготовка',
     level: 'Любой',
     master: 'Сергей',
-    notes: ['Отмена до октября'],
+    notes: 'Отмена до октября',
   },
   {
     day: 'Сб',
@@ -182,7 +188,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Сб',
@@ -191,7 +197,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Сб',
@@ -200,7 +206,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Здоровая спина (йога-терапия)',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: [],
+    notes: '',
   },
   {
     day: 'Вс',
@@ -209,7 +215,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    notes: ['по предварительной записи'],
+    notes: 'по предварительной записи',
   },
   {
     day: 'Вс',
@@ -218,7 +224,7 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Йога для беременных',
     level: 'Лёгкий',
     master: 'Надежда',
-    notes: ['по предварительной записи'],
+    notes: 'по предварительной записи',
   },
   {
     day: 'Вс',
@@ -227,20 +233,17 @@ const placeholderLessons: HumanLesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Андрей',
-    notes: ['по предварительной записи'],
+    notes: 'по предварительной записи',
   },
 ]
 
-const Lessons = placeholderLessons
+export const lessons = placeholderLessons
   .map(({ day, time, duration, title, level, master, notes }) => {
-    const id = `${day}-${time}-${master}-${title}`
+    const start = minutes(time)
+    const finish = start + duration
 
-    const [h, m] = time.split(':').map(Number)
-    const from = h * 60 + m
-    const to = from + duration
-
-    return { id, weekday: weekdays[day], from, to, title, level, master, notes } as Lesson
+    return { weekday: weekdays[day], start, finish, title, level, master, notes } as Lesson
   }) as Lesson[]
 
 
-export default getLessons(Lessons)
+export default getLessons(lessons)

@@ -1,10 +1,11 @@
 'use client'
 
+import React from 'react'
 
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+
 import Headroom from 'react-headroom'
 
 import { Container } from '@/components/Container'
@@ -14,7 +15,7 @@ import { Telegram } from '@/components/icons/Telegram'
 import { Whatsapp } from '@/components/icons/Whatsapp'
 import { cn } from '@/lib/utils'
 
-const navigation = [
+const links = [
   { key: '', href: '', title: 'Главная' },
   { key: 'schedule', href: 'schedule', title: 'Расписание' },
   { key: 'prices', href: 'prices', title: 'Цены' },
@@ -75,12 +76,13 @@ export const Header: React.FC<Props> = ({ className }) => {
                 <path d="M 4 4 A 1.0001 1.0001 0 1 0 4 6 L 20 6 A 1.0001 1.0001 0 1 0 20 4 L 4 4 z M 4 11 A 1.0001 1.0001 0 1 0 4 13 L 20 13 A 1.0001 1.0001 0 1 0 20 11 L 4 11 z M 4 18 A 1.0001 1.0001 0 1 0 4 20 L 20 20 A 1.0001 1.0001 0 1 0 20 18 L 4 18 z" />
               </svg>
             </div>
+          
           </Container>
           <div className="bg-brand-transparent max-md:hidden">
             <Container className="text-center">
               <ul className="inline-flex gap-4 leading-10">
                 {
-                  navigation.map(i => (
+                  links.map(i => (
                     <li
                       key={i.key}
                       className={cn('inline whitespace-nowrap', { 'text-brand-400': i.key === active })}
@@ -92,6 +94,7 @@ export const Header: React.FC<Props> = ({ className }) => {
                   ))
                 }
               </ul>
+              
             </Container>
           </div>
         </div>
@@ -107,7 +110,7 @@ export const Header: React.FC<Props> = ({ className }) => {
       </div>
       {opened && <ul className="divide-y divide-slate-200 fixed top-0 right-0 z-50 flex h-full flex-col items-center bg-white py-8 text-center md:hidden">
         {
-          navigation.map(i => (
+          links.map(i => (
             <li
               key={i.key}
               className={cn('w-full', { 'text-brand-400': i.key === active })}

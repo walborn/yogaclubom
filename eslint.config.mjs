@@ -72,7 +72,6 @@ const imports = {
       'error',
       {
         groups: [
-          'builtin',    // 1. Встроенные модули (node:fs, path и т. д.)
           'external',   // 2. Внешние зависимости (react, next, lodash)
           'internal',   // 3. Внутренние пути (@/components, @/lib)
           ['parent', 'sibling'], // 4. Родительские и соседние файлы
@@ -83,6 +82,19 @@ const imports = {
           order: 'asc', // Сортировка от A-Z
           caseInsensitive: true,
         },
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '{next,next/**}',
+            group: 'external',
+            position: 'before',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'], // Важно: исключим их из стандартной обработки
       },
     ],
   },

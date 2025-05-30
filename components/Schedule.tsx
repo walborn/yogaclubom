@@ -2,10 +2,12 @@
 
 import React from 'react'
 
+import { LessonCard } from './LessonCard'
+
 import { Container } from '@/components/Container'
 import { Button } from '@/components/ui/button'
 import type { Lesson } from '@/lib/definitions'
-import { getNowDay, WEEKDAYS as weekdays, format } from '@/lib/placeholder.lessons'
+import { getNowDay, WEEKDAYS } from '@/lib/placeholder.lessons'
 import { cn } from '@/lib/utils'
 
 
@@ -17,11 +19,11 @@ interface Props {
 
 export const Schedule = ({ lessons }: Props) => {
   const [day, setDay] = React.useState(getNowDay())
-  const [view, setView] = React.useState('day') // day or week
+  const [view, setView] = React.useState('day') // one day or whole week
 
   const table = lessons.reduce((r: Row[], dayLessons: Lesson[], weekday: number) => {
     dayLessons.forEach((lesson: Lesson) => {
-      const hour: number = lesson.from / 60 | 0
+      const hour: number = lesson.start / 60 | 0
       if (!r[hour]) r[hour] = { [weekday]: [lesson] }
       else if (!Array.isArray(r[hour][weekday])) r[hour][weekday] = [lesson]
       else r[hour][weekday] = [...r[hour][weekday], lesson]
@@ -39,7 +41,7 @@ export const Schedule = ({ lessons }: Props) => {
       </Button>
       <ul className="grid grid-cols-7 rounded-md mb-2 shadow-light overflow-hidden">
         {
-          weekdays.map((weekday, i) => (
+          WEEKDAYS.map((weekday, i) => (
             <li
               key={weekday}
               className={cn(i === day && 'bg-[#fbe1c2]', 'text-base cursor-pointer inline-block font-semibold p-2')}
@@ -57,15 +59,7 @@ export const Schedule = ({ lessons }: Props) => {
               key={i.id}
               className="p-5 my-3 rounded-md shadow-light"
             >
-              <div className="text-[#468ee5] font-bold">{format(i.from)} - {format(i.to)}</div>
-              <div>{i.title}</div>
-              <div className="font-light">{i.master}</div>
-              {/* {i.alternate && <div className="font-light text-brand-600">Сегодня замена</div>} */}
-              <div>{i.level}</div>
-
-              <div className="text-brand-300">
-                {i.notes.map(note => <div key={note}>{note}</div>)}
-              </div>
+              <LessonCard value={i} />
             </li>
           ))
         }
@@ -93,7 +87,7 @@ export const Schedule = ({ lessons }: Props) => {
             <tr>
               <th>T</th>
               {
-                weekdays.map((weekday, i) => (
+                WEEKDAYS.map((weekday, i) => (
                   <th
                     key={weekday}
                     className={cn(i === day && 'bg-[#fbe1c2]', 'text-base cursor-pointer font-semibold p-2')}
@@ -126,13 +120,7 @@ export const Schedule = ({ lessons }: Props) => {
                                 key={i.id}
                                 className="p-5 my-3 rounded-md shadow-light"
                               >
-                                <div className="text-[#468ee5] font-bold">{format(i.from)} - {format(i.to)}</div>
-                                <div>{i.title}</div>
-                                <div className="font-light">{i.master}</div>
-                                <div>{i.level}</div>
-                                <div className="text-brand-300 font-normal">
-                                  {i.notes.map(note => <div key={note}>{note}</div>)}
-                                </div>
+                                <LessonCard value={i} />
                               </li>
                             ))
                           }
