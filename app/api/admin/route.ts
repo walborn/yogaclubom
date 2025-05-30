@@ -1,19 +1,30 @@
-// import { NextResponse } from 'next/server'
-
-// import { auth } from '@/auth'
+// TODO: Update once server-side API methods are implemented for pages router again
+import { NextApiRequest, NextApiResponse } from 'next'
+import { NextResponse } from 'next/server'
  
+import { auth } from '@/auth'
+// import { getSession } from "next-auth/react"
+ 
+
+export async function GET() {
+  const session = await auth()
+
+  if (!session?.user) {
+    return NextResponse.json(
+      { message: 'Not authenticated' },
+      { status: 401 },
+    )
+  }
+
+  return NextResponse.json({ data: 'Protected data' })
+}
+
 // export const GET = auth(function GET(req) {
 //   if (req.auth) return NextResponse.json(req.auth)
 //   return NextResponse.json({ message: 'Not authenticated' }, { status: 401 })
 // })
 
 
-// TODO: Update once server-side API methods are implemented for pages router again
- 
-// import { auth } from "../../auth"
-// import { getSession } from "next-auth/react"
-import { NextApiRequest, NextApiResponse } from 'next'
- 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
