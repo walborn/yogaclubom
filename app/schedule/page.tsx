@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { Container } from '@/components/Container'
 import { Schedule } from '@/components/Schedule'
-import api from '@/lib/api'
+// import api from '@/lib/api'
 import { getLessons } from '@/lib/placeholder.lessons'
 import { enrichWithId, lessons as lessonsWithoutId } from '@/lib/placeholder.lessons'  // удалить, когда переедем на бд
 
