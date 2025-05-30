@@ -5,7 +5,6 @@ import React from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { LoaderCircle } from 'lucide-react'
 import { useForm } from 'react-hook-form'
-import { isValidPhoneNumber } from 'react-phone-number-input'
 import { z } from 'zod'
 
 import { Phone } from '@/components/icons/Phone'
@@ -22,17 +21,8 @@ import { Input } from '@/components/ui/input'
 import { PhoneInput } from '@/components/ui/phone-input'
 import { useToast, ToasterToast } from '@/hooks/use-toast'
 import { cn } from '@/lib/utils'
+import { UnlimitedSchema } from '@/lib/zod'
 
-const FormSchema = z.object({
-  name: z
-    .string()
-    .min(2, {
-      message: 'Имя должно содержать больше двух символов',
-    }),
-  phone: z
-    .string()
-    .refine(isValidPhoneNumber, { message: 'Невалидный номер' }),
-})
 
 interface Props {
   className?: string
@@ -41,15 +31,15 @@ interface Props {
 export const Unlimited: React.FC<Props> = ({ className }) => {
   const { toast } = useToast()
 
-  const form = useForm<z.infer<typeof FormSchema>>({
-    resolver: zodResolver(FormSchema),
+  const form = useForm<z.infer<typeof UnlimitedSchema>>({
+    resolver: zodResolver(UnlimitedSchema),
     defaultValues: {
       name: '',
       phone: '',
     },
   })
 
-  const handleSubmit = async (data: z.infer<typeof FormSchema>) => {
+  const handleSubmit = async (data: z.infer<typeof UnlimitedSchema>) => {
     const { id, update } = toast({
       description: (
         <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">

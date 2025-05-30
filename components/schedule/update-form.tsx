@@ -2,11 +2,11 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 
 import { Input } from '@/components/ui/input'
 import { updateLesson } from '@/lib/actions'
-import { Lesson } from '@/lib/definitions'
-import { format, WEEKDAYS } from '@/lib/placeholder.lessons'
+import type { LessonWithId } from '@/lib/definitions'
+import { format, weekdays } from '@/lib/placeholder.lessons'
 
 interface Props {
-  value: Lesson
+  value: LessonWithId
   dirty: boolean
   onChange: (form: FormData) => void
   onSubmit: React.FormEventHandler<HTMLFormElement>
@@ -38,7 +38,7 @@ export default function UpdateForm({ value, dirty, onChange, onSubmit }: Props) 
           >
             {[0, 1, 2, 3, 4, 5, 6].map((i) => (
               <option key={i} value={i}>
-                {WEEKDAYS[i]}
+                {weekdays[i]}
               </option>
             ))}
           </select>

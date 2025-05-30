@@ -19,7 +19,7 @@ export default auth((req) => {
   return NextResponse.next()
 })
 
-// This line configures which routes the middleware should run on
+// Don't invoke Middleware on some paths
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.png).*)'],
 }

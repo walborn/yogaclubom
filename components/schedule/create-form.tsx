@@ -4,7 +4,7 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 
 import { Input } from '@/components/ui/input'
 import { createLesson, State } from '@/lib/actions'
-import { WEEKDAYS } from '@/lib/placeholder.lessons'
+import { weekdays } from '@/lib/placeholder.lessons'
 
 interface Props {
   className: string
@@ -37,7 +37,7 @@ export default function CreateForm({ className, weekday, onSubmit }: Props) {
           >
             {[0, 1, 2, 3, 4, 5, 6].map((i) => (
               <option key={i} value={i}>
-                {WEEKDAYS[i]}
+                {weekdays[i]}
               </option>
             ))}
           </select>

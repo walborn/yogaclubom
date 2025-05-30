@@ -6,23 +6,22 @@ import { LessonCard } from './LessonCard'
 
 import { Container } from '@/components/Container'
 import { Button } from '@/components/ui/button'
-import type { Lesson } from '@/lib/definitions'
-import { getNowDay, WEEKDAYS } from '@/lib/placeholder.lessons'
+import type { LessonWithId } from '@/lib/definitions'
+import { getNowDay, weekdays } from '@/lib/placeholder.lessons'
 import { cn } from '@/lib/utils'
 
-
-type Row = Record<string, Lesson[]>
+type Row = Record<string, LessonWithId[]>
 
 interface Props {
-  lessons: Lesson[][]
+  lessons: LessonWithId[][]
 }
 
 export const Schedule = ({ lessons }: Props) => {
   const [day, setDay] = React.useState(getNowDay())
   const [view, setView] = React.useState('day') // one day or whole week
 
-  const table = lessons.reduce((r: Row[], dayLessons: Lesson[], weekday: number) => {
-    dayLessons.forEach((lesson: Lesson) => {
+  const table = lessons.reduce((r: Row[], dayLessons: LessonWithId[], weekday: number) => {
+    dayLessons.forEach((lesson: LessonWithId) => {
       const hour: number = lesson.start / 60 | 0
       if (!r[hour]) r[hour] = { [weekday]: [lesson] }
       else if (!Array.isArray(r[hour][weekday])) r[hour][weekday] = [lesson]
@@ -41,7 +40,7 @@ export const Schedule = ({ lessons }: Props) => {
       </Button>
       <ul className="grid grid-cols-7 rounded-md mb-2 shadow-light overflow-hidden">
         {
-          WEEKDAYS.map((weekday, i) => (
+          weekdays.map((weekday, i) => (
             <li
               key={weekday}
               className={cn(i === day && 'bg-[#fbe1c2]', 'text-base cursor-pointer inline-block font-semibold p-2')}
@@ -54,7 +53,7 @@ export const Schedule = ({ lessons }: Props) => {
       </ul>
       <ul>
         {
-          lessons[day].map((i: Lesson) => (
+          lessons[day].map((i: LessonWithId) => (
             <li
               key={i.id}
               className="p-5 my-3 rounded-md shadow-light"
@@ -87,7 +86,7 @@ export const Schedule = ({ lessons }: Props) => {
             <tr>
               <th>T</th>
               {
-                WEEKDAYS.map((weekday, i) => (
+                weekdays.map((weekday, i) => (
                   <th
                     key={weekday}
                     className={cn(i === day && 'bg-[#fbe1c2]', 'text-base cursor-pointer font-semibold p-2')}
@@ -115,7 +114,7 @@ export const Schedule = ({ lessons }: Props) => {
                       >
                         <ul>
                           {
-                            row[weekday]?.map((i: Lesson) => (
+                            row[weekday]?.map((i: LessonWithId) => (
                               <li
                                 key={i.id}
                                 className="p-5 my-3 rounded-md shadow-light"

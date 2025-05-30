@@ -3,11 +3,11 @@
 import { useState } from 'react'
 
 import UpdateForm from '@/components/schedule/update-form'
-import { Lesson } from '@/lib/definitions'
+import type { LessonWithId } from '@/lib/definitions'
 import { minutes } from '@/lib/placeholder.lessons'
 
 interface Props {
-  value: Lesson
+  value: LessonWithId
   onSubmit: () => void
 }
 export default function Form({ value, onSubmit }: Props) {

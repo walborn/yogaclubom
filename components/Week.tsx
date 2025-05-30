@@ -19,12 +19,12 @@ import {
   DialogTrigger,
   DialogFooter,
 } from '@/components/ui/dialog'
-import type { Lesson } from '@/lib/definitions'
-import { getNowDay, getLessons, WEEKDAYS as weekdays } from '@/lib/placeholder.lessons'
+import type { LessonWithId } from '@/lib/definitions'
+import { getNowDay, getLessons, weekdays } from '@/lib/placeholder.lessons'
 import { cn } from '@/lib/utils'
 
 interface Props {
-  values: Lesson[]
+  values: LessonWithId[]
 }
 
 export const Week = ({ values }: Props) => {
@@ -32,7 +32,7 @@ export const Week = ({ values }: Props) => {
   const [ updating, setUpdating ] = React.useState<string>()
   const [ creating, setCreating ] = React.useState(false)
 
-  const lessons = getLessons(values)
+  const lessons: LessonWithId[][] = getLessons(values)
   const handleMode = (id: string, creating: boolean) => () => {
     setUpdating(id)
     setCreating(creating)
@@ -59,7 +59,7 @@ export const Week = ({ values }: Props) => {
       </ul>
       <ul>
         {
-          lessons[day].map((i: Lesson) => (
+          lessons[day].map((i: LessonWithId) => (
             <li
               key={i.id}
               className="p-5 my-3 rounded-md shadow-light relative"

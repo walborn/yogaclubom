@@ -1,14 +1,13 @@
 import postgres from 'postgres'
 
 import { auth } from '@/auth'
-import type { User } from '@/lib/definitions'
-import { Lesson } from '@/lib/definitions'
+import { Lesson, UserWithId, LessonWithId } from '@/lib/definitions'
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' })
 
 export default {
   lessons: {
-    create: async ({ weekday, title, start, finish, master, level, notes }: Omit<Lesson, 'id'>) => {
+    create: async ({ weekday, title, start, finish, master, level, notes }: Lesson) => {
       // Insert data into the database
       const session = await auth()
       if (!session?.user) {
@@ -27,7 +26,7 @@ export default {
         }
       } 
     },
-    update: async ({ id, weekday, title, start, finish, master, level, notes }: Lesson) => {
+    update: async ({ id, weekday, title, start, finish, master, level, notes }: LessonWithId) => {
       // Update data into the database
       const session = await auth()
       if (!session?.user) {
@@ -68,7 +67,7 @@ export default {
     },
     list: async () => {
       try {
-        return await sql<Lesson[]>`
+        return await sql<LessonWithId[]>`
           SELECT * FROM lessons
           ORDER BY weekday ASC, start ASC, finish ASC;`
       } catch (error) {
@@ -78,9 +77,9 @@ export default {
     },
   },
   users: {
-    get: async (email: string): Promise<User | undefined> => {
+    get: async (email: string): Promise<UserWithId | undefined> => {
       try {
-        const user = await sql<User[]>`SELECT * FROM users WHERE email=${email}`
+        const user = await sql<UserWithId[]>`SELECT * FROM users WHERE email=${email}`
         return user[0]
       } catch (error) {
         console.error('Failed to fetch user:', error)

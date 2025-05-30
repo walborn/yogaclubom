@@ -1,5 +1,5 @@
 import { Container } from '@/components/Container'
-import { WEEKDAYS } from '@/lib/placeholder.lessons'
+import { weekdays } from '@/lib/placeholder.lessons'
 import { cn } from '@/lib/utils'
 
 const CardSkeleton = () => (
@@ -19,7 +19,7 @@ export const ScheduleSkeleton = ({ day }: {day: number}) => (
     </div>
     <ul className="grid grid-cols-7 rounded-md mb-2 shadow-light overflow-hidden">
       {
-        WEEKDAYS.map((weekday, i) => (
+        weekdays.map((weekday, i) => (
           <li
             key={weekday}
             className={cn({'bg-[#fbe1c2]': i === day}, 'text-base inline-block font-semibold p-2 opacity-50')}

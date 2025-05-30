@@ -2,9 +2,9 @@ import bcryptjs from 'bcryptjs'
 import NextAuth from 'next-auth'
 import Credentials from 'next-auth/providers/credentials'
 // import GitHub from 'next-auth/providers/github'
-import { z } from 'zod'
 
 import api from '@/lib/api'
+import { signInSchema } from '@/lib/zod'
 // import { signInSchema } from '@/lib/zod'
  
 export const { handlers, auth, signIn, signOut } = NextAuth({
@@ -21,9 +21,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   providers: [
     Credentials({
       async authorize(credentials) {
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string().min(6) })
-          .safeParse(credentials)
+        const parsedCredentials = signInSchema.safeParse(credentials)
  
         if (parsedCredentials.success) {
           const { email, password } = parsedCredentials.data

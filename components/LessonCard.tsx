@@ -1,11 +1,11 @@
 import React from 'react'
 
-import type { Lesson } from '@/lib/definitions'
+import type { LessonWithId } from '@/lib/definitions'
 import { format } from '@/lib/placeholder.lessons'
 
 
 interface Props {
-  value: Lesson
+  value: LessonWithId
 }
 
 export const LessonCard = ({ value }: Props) => (

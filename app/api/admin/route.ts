@@ -4,7 +4,6 @@ import { NextResponse } from 'next/server'
  
 import { auth } from '@/auth'
 // import { getSession } from "next-auth/react"
- 
 
 export async function GET() {
   const session = await auth()

@@ -4,26 +4,13 @@ import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 
 import { AuthError } from 'next-auth'
-import { z } from 'zod'
+
 
 import { signIn } from '@/auth'
 import api from '@/lib/api'
 import { minutes } from '@/lib/placeholder.lessons'
+import { LessonSchema } from '@/lib/zod'
 
-const LessonSchema = z.object({
-  id: z.string(),
-  title: z.string({
-    invalid_type_error: 'Please type a title.',
-  }),
-  weekday: z.coerce.number().int().min(0).max(6),
-  start: z.coerce.number().int().min(0).max(1439),
-  finish: z.coerce.number().int().min(0).max(1439),
-  master: z.string(),
-  level: z.string(),
-  notes: z.string(),
-})
-
-const CreateLessonSchema = LessonSchema.omit({ id: true })
 
 export type State = {
   errors?: {
@@ -39,7 +26,7 @@ export type State = {
 }
  
 export async function createLesson(prevState: State, formData: FormData) {
-  const validatedFields = CreateLessonSchema.safeParse({
+  const validatedFields = LessonSchema.omit({ id: true }).safeParse({
     title: formData.get('title'),
     weekday: formData.get('weekday'),
     start: minutes(formData.get('start') as string),

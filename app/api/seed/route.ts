@@ -1,14 +1,14 @@
 import bcryptjs from 'bcryptjs'
 import postgres from 'postgres'
 
-import {lessons} from '@/lib/placeholder.lessons'
-import {users} from '@/lib/placeholder.users'
+import { lessons } from '@/lib/placeholder.lessons'
+import { users } from '@/lib/placeholder.users'
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' })
 
 async function seedLessons() {
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`
-  // await sql`DROP TABLE IF EXISTS lessons`
+  await sql`DROP TABLE IF EXISTS lessons`
   await sql`
     CREATE TABLE IF NOT EXISTS lessons (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -33,6 +33,7 @@ async function seedLessons() {
 
 async function seedUsers() {
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`
+  await sql`DROP TABLE IF EXISTS users`
   await sql`
     CREATE TABLE IF NOT EXISTS users (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -42,18 +43,16 @@ async function seedUsers() {
     );
   `
 
-  const insertedUsers = await Promise.all(
+  return await Promise.all(
     users.map(async (user) => {
       const hashedPassword = await bcryptjs.hash(user.password, 10)
       return sql`
-        INSERT INTO users (id, name, email, password)
-        VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
+        INSERT INTO users (name, email, password)
+        VALUES (${user.name}, ${user.email}, ${hashedPassword})
         ON CONFLICT (id) DO NOTHING;
       `
     }),
   )
-
-  return insertedUsers
 }
 
 export async function GET() {
