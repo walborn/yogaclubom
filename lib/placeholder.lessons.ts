@@ -1,4 +1,5 @@
-import type { WeekDay, WeekDayIndex, LessonHuman, LessonWithId } from '@/lib/definitions'
+import type { WeekDay, WeekDayIndex, LessonHuman, Lesson, LessonWithId } from '@/lib/definitions'
+import { randomUUID } from 'crypto'
 
 const placeholderLessons: LessonHuman[] = [
   {
@@ -231,7 +232,7 @@ export const getLessons = <T extends LessonLike>(list: T[]) => {
   return Lessons.map(i => i?.sort(compare) || [])
 }
 
-export const lessons = placeholderLessons
+export const lessons: Lesson[] = placeholderLessons
   .map(({ weekday, start, finish, ...others   }) => {
     return {
       ...others,
@@ -241,4 +242,7 @@ export const lessons = placeholderLessons
     }
   })
 
+export const enrichWithId = <T>(items: T[]): Array<T & { id: string }> => items
+  .map(item => ({ id: randomUUID(), ...item }))
+  
 export default getLessons(lessons)
