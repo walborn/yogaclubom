@@ -8,11 +8,11 @@ import { AuthError } from 'next-auth'
 
 import { signIn } from '@/auth'
 import api from '@/lib/api'
-import { minutes } from '@/lib/placeholder.lessons'
+import { WeekDay } from '@/lib/definitions'
+import { minutes, weekdayByName } from '@/lib/placeholder.lessons'
 import { LessonSchema } from '@/lib/zod'
 
-
-export type State = {
+export type CreateState = {
   errors?: {
     title?: string[];
     weekday?: string[];
@@ -25,7 +25,7 @@ export type State = {
   message?: string | null;
 }
  
-export async function createLesson(prevState: State, formData: FormData) {
+export async function createLesson(prevState: CreateState, formData: FormData) {
   const validatedFields = LessonSchema.omit({ id: true }).safeParse({
     title: formData.get('title'),
     weekday: formData.get('weekday'),
@@ -54,22 +54,60 @@ export async function createLesson(prevState: State, formData: FormData) {
   revalidatePath('/schedule/edit')
   redirect('/schedule/edit')
 }
-export async function updateLesson(formData: FormData) {
-  const { id, weekday, title, start, finish, master, level, notes } = LessonSchema.parse({
-    id: formData.get('id'),
-    title: formData.get('title'),
-    weekday: formData.get('weekday'),
-    start: minutes(formData.get('start') as string),
-    finish: minutes(formData.get('finish') as string),
-    master: formData.get('master'),
-    level: formData.get('level'),
-    notes: formData.get('notes'),
-  })
 
-  await api.lessons.update({ id, weekday, title, start, finish, master, level, notes })
+export type UpdateState = {
+  errors?: {
+    id?: string[]
+    title?: string[]
+    weekday?: string[]
+    start?: string[]
+    finish?: string[]
+    master?: string[]
+    level?: string[]
+    notes?: string[]
+  }
+  message?: string
+  status: 'fulfilled' | 'rejected' | 'pending'
+  data?: FormData
+}
 
-  revalidatePath('/schedule/edit')
-  redirect('/schedule/edit')
+export async function updateLesson(prevState: UpdateState, formData: FormData): Promise<UpdateState> {
+  try {  
+    const validatedFields = LessonSchema.safeParse({
+      id: formData.get('id'),
+      title: formData.get('title'),
+      weekday: weekdayByName[formData.get('weekday') as WeekDay],
+      start: minutes(formData.get('start') as string),
+      finish: minutes(formData.get('finish') as string),
+      master: formData.get('master'),
+      level: formData.get('level'),
+      notes: formData.get('notes'),
+    })
+
+    if (!validatedFields.success) {
+      return {
+        errors: validatedFields.error.flatten().fieldErrors,
+        message: 'Missing Fields. Failed to Create Lesson.',
+        status: 'rejected',
+      }
+    }
+
+    // Prepare data for insertion into the database
+    const { id, weekday, title, start, finish, master, level, notes } = validatedFields.data
+
+
+    // await new Promise((resolve) => setTimeout(resolve, 3000))
+    await api.lessons.update({ id, weekday, title, start, finish, master, level, notes })
+
+    revalidatePath('/schedule/edit')
+    return { status: 'fulfilled', data: formData }
+
+  } catch (error) {
+    return { 
+      status: 'rejected',
+      message: `Database Error: Failed to Update Lesson. ${error}`,
+    }
+  }
 }
 
 

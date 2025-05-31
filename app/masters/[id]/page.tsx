@@ -5,7 +5,7 @@ import masters from '../masters'
 
 import { Avatar } from '@/components/Avatar'
 import { Container } from '@/components/Container'
-import { Title } from '@/components/Title'
+import { Title } from '@/components/ui/title'
 
 
  

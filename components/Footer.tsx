@@ -24,7 +24,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
     <footer className={cn('bg-main text-brand-800', className)}>
       <Container className="flex max-md:flex-col gap-5 items-center justify-between px-4 py-8">
         <Link href="/">
-          <Image src="/logo.png" alt="Logo" width={128} height={128} />
+          <Image src="/logo.png" alt="Logo" width={128} height={128} priority/>
         </Link>
 
         <div className="inline-flex gap-3">

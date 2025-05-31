@@ -40,7 +40,7 @@ export const Header: React.FC<Props> = ({ className }) => {
           <Container className="flex items-center justify-between p-4">
             <div className="flex items-center gap-4">
               <Link href="/">
-                <Image src="/logo.png" alt="Logo" width={48} height={48} />
+                <Image src="/logo.png" alt="Logo" width={48} height={48} priority/>
               </Link>
               <Location
                 href="https://yandex.ru/maps/-/CCQlqKsMhD"

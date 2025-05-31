@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { Container } from '@/components/Container'
-import { Title } from '@/components/Title'
+import { Title } from '@/components/ui/title'
 import { Unlimited } from '@/components/Unlimited'
 
 export const metadata: Metadata = {

@@ -1,5 +1,3 @@
-import { SessionProvider } from 'next-auth/react'
-
 import { auth } from '@/auth'
 import { Container } from '@/components/Container'
 import { UserButton } from '@/components/UserButton'
@@ -13,13 +11,11 @@ export default async function Page() {
   if (!session) return <div>Not authenticated</div>
 
   return (
-    <SessionProvider session={session}>
-      <Container className="text-center">
-        <div className="flex justify-center">
-          <UserButton />
-        </div>
-        <Week values={lessons} />
-      </Container>
-    </SessionProvider>
+    <Container className="text-center">
+      <div className="flex justify-center">
+        <UserButton />
+      </div>
+      <Week values={lessons} />
+    </Container>
   )
 }

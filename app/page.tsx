@@ -5,8 +5,8 @@ import type { Metadata } from 'next'
 import { Container } from '@/components/Container'
 import { HomeCarousel } from '@/components/HomeCarousel'
 import { Location } from '@/components/icons/Location'
-import { Title } from '@/components/Title'
 import SignOutForm from '@/components/ui/signout-form'
+import { Title } from '@/components/ui/title'
 import { Unlimited } from '@/components/Unlimited'
 
 export const metadata: Metadata = {

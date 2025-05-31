@@ -2,8 +2,8 @@
  
 import { useEffect } from 'react'
 
-import { Title } from '@/components/Title'
 import { Button } from '@/components/ui/button'
+import { Title } from '@/components/ui/title'
 
 interface Props {
   error: Error & { digest?: string }

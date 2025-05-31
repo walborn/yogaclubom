@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { Title } from '@/components/Title'
+import { Title } from '@/components/ui/title'
  
 export default function NotFound() {
   return (

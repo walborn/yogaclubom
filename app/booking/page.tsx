@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { Container } from '@/components/Container'
 import { GymCarousel } from '@/components/GymCarousel'
 import { List } from '@/components/List'
-import { Title } from '@/components/Title'
+import { Title } from '@/components/ui/title'
 
 export const metadata: Metadata = {
   title: 'Аренда залов | Yoga Club OM',

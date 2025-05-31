@@ -3,7 +3,7 @@ import { useActionState } from 'react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 
 import { Input } from '@/components/ui/input'
-import { createLesson, State } from '@/lib/actions'
+import { createLesson, CreateState } from '@/lib/actions'
 import { weekdays } from '@/lib/placeholder.lessons'
 
 interface Props {
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function CreateForm({ className, weekday, onSubmit }: Props) {
-  const initialState: State = { message: null, errors: {} }
+  const initialState: CreateState = { message: null, errors: {} }
   const [ state, formAction ] = useActionState(createLesson, initialState)
   
   return (

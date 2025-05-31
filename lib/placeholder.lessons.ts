@@ -1,4 +1,4 @@
-import type { WeekDay, WeekDayIndex, LessonHuman, Lesson, LessonWithId } from '@/lib/definitions'
+import type { WeekDay, WeekDayIndex, LessonHuman, Lesson, LessonWithId, StrictTimeString } from '@/lib/definitions'
 import { randomUUID } from 'crypto'
 
 const placeholderLessons: LessonHuman[] = [
@@ -199,7 +199,7 @@ export const weekdayByName: Record<WeekDay, WeekDayIndex> = {
 
 export const weekdays: WeekDay[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
 
-export const format = (minutes: number) => (mm => `${`0${(minutes - mm) / 60}`.slice(-2)}:${`0${mm}`.slice(-2)}`)(minutes % 60)
+export const format = (minutes: number): StrictTimeString => (mm => `${`0${(minutes - mm) / 60}`.slice(-2)}:${`0${mm}`.slice(-2)}`)(minutes % 60) as StrictTimeString
 export const minutes = (time?: string) => {
   if (!time) return 0
   const [h, m] = time.split(':').map(Number)
