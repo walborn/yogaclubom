@@ -7,7 +7,7 @@ import { LessonCard } from './LessonCard'
 import { Container } from '@/components/Container'
 import { Button } from '@/components/ui/button'
 import type { LessonWithId } from '@/lib/definitions'
-import { getNowDay, weekdays } from '@/lib/placeholder.lessons'
+import { getNowDay, weekdays, humanizeLesson } from '@/lib/placeholder.lessons'
 import { cn } from '@/lib/utils'
 
 type Row = Record<string, LessonWithId[]>
@@ -58,7 +58,7 @@ export const Schedule = ({ lessons }: Props) => {
               key={i.id}
               className="p-5 my-3 rounded-md shadow-light"
             >
-              <LessonCard value={i} />
+              <LessonCard value={humanizeLesson(i)} />
             </li>
           ))
         }
@@ -119,7 +119,7 @@ export const Schedule = ({ lessons }: Props) => {
                                 key={i.id}
                                 className="p-5 my-3 rounded-md shadow-light"
                               >
-                                <LessonCard value={i} />
+                                <LessonCard value={humanizeLesson(i)} />
                               </li>
                             ))
                           }

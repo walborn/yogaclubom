@@ -80,7 +80,6 @@ export const Week = ({ values }: Props) => {
                 }}
                 onActivate={handleActivate(i.id)}
                 onDeactivate={handleDeactivate}
-                onDelete={handleDeactivate}
                 active={updating === i.id}
               />
             </li>

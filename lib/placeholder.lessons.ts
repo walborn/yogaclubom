@@ -1,6 +1,17 @@
 import type { WeekDay, WeekDayIndex, LessonHuman, Lesson, LessonWithId, StrictTimeString } from '@/lib/definitions'
 import { randomUUID } from 'crypto'
 
+export const humanizeLesson = (lesson: LessonWithId): LessonHuman => {
+  return {
+    title: lesson.title,
+    weekday: weekdays[lesson.weekday],
+    start: format(lesson.start),
+    finish: format(lesson.finish),
+    master: lesson.master,
+    level: lesson.level,
+    notes: lesson.notes,
+  }
+}
 const placeholderLessons: LessonHuman[] = [
   {
     weekday: 'Пн',
