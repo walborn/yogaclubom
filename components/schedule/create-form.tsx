@@ -19,8 +19,6 @@ export default function CreateForm({ className, weekday, onDeactivate }: Props) 
   const [ state, formAction, isPending ] = React.useActionState(createLesson, { status: 'pending' })
   
   React.useEffect(() => {
-    console.log(`deactivating is ${!isPending && state.status === 'fulfilled'}`, isPending, state.status)
-
     if (!isPending && state.status === 'fulfilled') {
       onDeactivate()
     }

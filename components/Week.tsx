@@ -44,7 +44,6 @@ export const Week = ({ values }: Props) => {
     setCreating(false)
   }
 
-  console.log(55, updating)
   return (
     <Container className="text-center p-5">
       <ul className="grid grid-cols-7 rounded-md mb-2 shadow-light overflow-hidden">
