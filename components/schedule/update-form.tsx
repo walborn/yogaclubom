@@ -5,9 +5,8 @@ import React from 'react'
 import { CheckIcon } from '@heroicons/react/24/outline'
 import { ArrowPathIcon, PencilIcon, XMarkIcon, TrashIcon } from '@heroicons/react/24/outline'
 
-import { ActionButton } from './ActionButton'
-
 import { LessonCard } from '@/components/LessonCard'
+import { ActionButton } from '@/components/schedule/ActionButton'
 import { DeleteButton } from '@/components/schedule/delete-button'
 import {
   Dialog,

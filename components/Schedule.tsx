@@ -2,9 +2,8 @@
 
 import React from 'react'
 
-import { LessonCard } from './LessonCard'
-
 import { Container } from '@/components/Container'
+import { LessonCard } from '@/components/LessonCard'
 import { Button } from '@/components/ui/button'
 import type { LessonWithId } from '@/lib/definitions'
 import { getNowDay, weekdays, humanizeLesson } from '@/lib/placeholder.lessons'

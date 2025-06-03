@@ -212,7 +212,7 @@ export const weekdays: WeekDay[] = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'С�
 
 export const format = (minutes: number): StrictTimeString => (mm => `${`0${(minutes - mm) / 60}`.slice(-2)}:${`0${mm}`.slice(-2)}`)(minutes % 60) as StrictTimeString
 export const minutes = (time?: string) => {
-  if (!time) return 0
+  if (!time) return -1
   const [h, m] = time.split(':').map(Number)
   return h * 60 + m
 }

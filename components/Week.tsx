@@ -3,7 +3,7 @@
 import React from 'react'
 
 
-import {PlusIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { PlusIcon } from '@heroicons/react/24/outline'
 
 import { Container } from '@/components/Container'
 import CreateForm from '@/components/schedule/create-form'
@@ -91,16 +91,10 @@ export const Week = ({ values }: Props) => {
         ? (
           <div className="relative">
             <CreateForm
-              onSubmit={handleDeactivate}
+              onDeactivate={() => setCreating(false)}
               weekday={day}
               className="p-5 my-3 rounded-md shadow-light relative"
             />
-            <div
-              className="absolute top-2 right-2 rounded-md border p-2 hover:bg-gray-100 cursor-pointer"
-              onClick={handleDeactivate}
-            >
-              <XMarkIcon className="size-3" />
-            </div>
           </div>
         ) : (
           <div onClick={handleCreating} className="m-auto inline-block rounded-md border p-2 hover:bg-gray-100 cursor-pointer">

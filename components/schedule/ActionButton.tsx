@@ -8,17 +8,20 @@ interface Props {
   className?: string
   iconClassName?: string
   type?: 'button' | 'submit'
+  disabled?: boolean
 }
 
-export const ActionButton = ({ onClick, icon: Icon, className, iconClassName, type }: Props) => {
+export const ActionButton = ({ onClick, icon: Icon, className, iconClassName, type, disabled }: Props) => {
   return (
     <button
       className={cn(
         'rounded-md border p-2 hover:bg-gray-100 cursor-pointer',
+        { 'pointer-events-none opacity-50': disabled },
         className,
       )}
       onClick={onClick}
       type={type}
+      disabled={disabled}
     >
       <Icon className={cn('size-3', iconClassName)} />
     </button>

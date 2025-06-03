@@ -18,9 +18,9 @@ export const LessonSchema = z.object({
   id: z.string(),
   title: z.string({ invalid_type_error: 'Please type a title.' }),
   weekday: z.coerce.number().int().min(0).max(6),
-  start: z.coerce.number().int().min(0).max(1439),
+  start: z.coerce.number().int().min(0, { message: 'Невалидное время' }).max(1439, { message: 'Невалидное время' }),
   finish: z.coerce.number().int().min(0).max(1439),
-  master: z.string(),
+  master: z.string().min(2, { message: 'Имя должно содержать больше двух символов' }),
   level: z.string(),
   notes: z.string(),
 })

@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import { auth } from '@/auth'
 
 // List of routes that require authentication
-const protectedRoutes = ['/schedule/edit', '/api/*']
+const protectedRoutes = ['/schedule/edit']
 
 export default auth((req) => {
   const isLoggedIn = !!req.auth

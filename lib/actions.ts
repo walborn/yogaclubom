@@ -14,45 +14,56 @@ import { LessonSchema } from '@/lib/zod'
 
 export type CreateState = {
   errors?: {
-    title?: string[];
-    weekday?: string[];
-    start?: string[];
-    finish?: string[];
-    master?: string[];
-    level?: string[];
-    notes?: string[];
-  };
-  message?: string | null;
+    id?: string[]
+    title?: string[]
+    weekday?: string[]
+    start?: string[]
+    finish?: string[]
+    master?: string[]
+    level?: string[]
+    notes?: string[]
+  }
+  message?: string
+  status: 'fulfilled' | 'rejected' | 'pending'
+  data?: FormData
 }
  
-export async function createLesson(prevState: CreateState, formData: FormData) {
-  const validatedFields = LessonSchema.omit({ id: true }).safeParse({
-    title: formData.get('title'),
-    weekday: formData.get('weekday'),
-    start: minutes(formData.get('start') as string),
-    finish: minutes(formData.get('finish') as string),
-    master: formData.get('master'),
-    level: formData.get('level'),
-    notes: formData.get('notes'),
-  })
+export async function createLesson(prevState: CreateState, formData: FormData): Promise<CreateState> {
+  try {
+    const validatedFields = LessonSchema.omit({ id: true }).safeParse({
+      title: formData.get('title'),
+      weekday: formData.get('weekday'),
+      start: minutes(formData.get('start') as string),
+      finish: minutes(formData.get('finish') as string),
+      master: formData.get('master'),
+      level: formData.get('level'),
+      notes: formData.get('notes'),
+    })
 
-  // If form validation fails, return errors early. Otherwise, continue.
-  if (!validatedFields.success) {
-    return {
-      errors: validatedFields.error.flatten().fieldErrors,
-      message: 'Missing Fields. Failed to Create Lesson.',
+    // If form validation fails, return errors early. Otherwise, continue.
+    if (!validatedFields.success) {
+      return {
+        status: 'rejected',
+        errors: validatedFields.error.flatten().fieldErrors,
+        message: 'Missing Fields. Failed to Create Lesson.',
+      }
+    }
+  
+    // Prepare data for insertion into the database
+    const { weekday, title, start, finish, master, level, notes } = validatedFields.data
+
+    // Insert data into the database
+    await api.lessons.create({ weekday, title, start, finish, master, level, notes })
+
+    // Revalidate the cache for the lessons page
+    revalidatePath('/schedule/edit')
+    return { status: 'fulfilled', data: formData }
+  } catch (error) {
+    return { 
+      status: 'rejected',
+      message: `Database Error: Failed to Create Lesson. ${error}`,
     }
   }
-  
-  // Prepare data for insertion into the database
-  const { weekday, title, start, finish, master, level, notes } = validatedFields.data
-
-  // Insert data into the database
-  await api.lessons.create({ weekday, title, start, finish, master, level, notes })
-
-  // Revalidate the cache for the lessons page
-  revalidatePath('/schedule/edit')
-  redirect('/schedule/edit')
 }
 
 export type UpdateState = {
@@ -86,9 +97,9 @@ export async function updateLesson(prevState: UpdateState, formData: FormData): 
 
     if (!validatedFields.success) {
       return {
+        status: 'rejected',
         errors: validatedFields.error.flatten().fieldErrors,
         message: 'Missing Fields. Failed to Create Lesson.',
-        status: 'rejected',
       }
     }
 
