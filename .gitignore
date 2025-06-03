@@ -38,4 +38,4 @@ next-env.d.ts
 
 # protected
 lib/placeholder.users.ts
-app/api/seed2
+app/api/seed
