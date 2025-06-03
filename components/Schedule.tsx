@@ -7,20 +7,21 @@ import { LessonCard } from '@/components/LessonCard'
 import { Button } from '@/components/ui/button'
 import type { LessonWithId } from '@/lib/definitions'
 import { getNowDay, weekdays, humanizeLesson } from '@/lib/placeholder.lessons'
+import { getLessons } from '@/lib/placeholder.lessons'
 import { cn } from '@/lib/utils'
 
 type Row = Record<string, LessonWithId[]>
 
 interface Props {
-  lessons: LessonWithId[][]
+  values: LessonWithId[]
 }
 
-export const Schedule = ({ lessons }: Props) => {
+export const Schedule = ({ values }: Props) => {
   const [day, setDay] = React.useState(getNowDay())
   const [view, setView] = React.useState('day') // one day or whole week
 
-  console.log(lessons)
-
+  console.log(values)
+  const lessons = getLessons(values)
   const table = lessons.reduce((r: Row[], dayLessons: LessonWithId[], weekday: number) => {
     dayLessons.forEach((lesson: LessonWithId) => {
       const hour: number = lesson.start / 60 | 0

@@ -57,6 +57,7 @@ export async function createLesson(prevState: CreateState, formData: FormData): 
 
     // Revalidate the cache for the lessons page
     revalidatePath('/schedule/edit')
+    revalidatePath('/schedule')
     return { status: 'fulfilled', data: formData }
   } catch (error) {
     return { 
@@ -111,6 +112,7 @@ export async function updateLesson(prevState: UpdateState, formData: FormData): 
     await api.lessons.update({ id, weekday, title, start, finish, master, level, notes })
 
     revalidatePath('/schedule/edit')
+    revalidatePath('/schedule')
     return { status: 'fulfilled', data: formData }
 
   } catch (error) {
@@ -126,6 +128,7 @@ export async function deleteLesson(id: string) {
   await api.lessons.delete(id)
 
   revalidatePath('/schedule/edit')
+  revalidatePath('/schedule')
   redirect('/schedule/edit')
 }
 
