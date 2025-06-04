@@ -1,3 +1,5 @@
+'use client'
+
 import { Container } from '@/components/Container'
 import {ScheduleSkeleton} from '@/components/ui/skeletons'
 import { getNowDay } from '@/lib/placeholder.lessons'
