@@ -5,7 +5,6 @@ import type { Metadata } from 'next'
 import { Container } from '@/components/Container'
 import { HomeCarousel } from '@/components/HomeCarousel'
 import { Location } from '@/components/icons/Location'
-import SignOutForm from '@/components/ui/signout-form'
 import { Title } from '@/components/ui/title'
 import { Unlimited } from '@/components/Unlimited'
 
@@ -57,7 +56,6 @@ const HomePage: React.FC = () => (
         <Title size="lg">Акция: 2 занятия по цене 1!</Title>
         <Unlimited className="shadow-light p-5 rounded" />
       </section>
-      <SignOutForm className="fixed bottom-2 right-2"/>
     </div>
   </Container>
 )
