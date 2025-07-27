@@ -5,7 +5,7 @@
       "name": "yogaclubom",
       "dependencies": {
         "@heroicons/react": "^2.2.0",
-        "@hookform/resolvers": "^5.1.1",
+        "@hookform/resolvers": "^5.2.0",
         "@pbe/react-yandex-maps": "^1.2.5",
         "@radix-ui/react-avatar": "^1.1.10",
         "@radix-ui/react-dialog": "^1.1.14",
@@ -23,31 +23,31 @@
         "cmdk": "1.1.1",
         "embla-carousel-autoplay": "^8.6.0",
         "embla-carousel-react": "^8.6.0",
-        "lucide-react": "^0.511.0",
-        "next": "^15.4.1",
+        "lucide-react": "^0.526.0",
+        "next": "^15.4.4",
         "next-auth": "^5.0.0-beta.29",
         "postgres": "^3.4.7",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "react-ga": "^3.3.1",
         "react-headroom": "^3.2.1",
-        "react-hook-form": "^7.60.0",
+        "react-hook-form": "^7.61.1",
         "react-phone-number-input": "^3.4.12",
         "react-yandex-maps": "^4.6.0",
         "react-yandex-metrika": "^2.6.0",
         "tailwindcss-animate": "^1.0.7",
-        "zod": "^3.25.76",
+        "zod": "^4.0.10",
       },
       "devDependencies": {
-        "@eslint/js": "^9.31.0",
-        "@next/eslint-plugin-next": "^15.4.1",
+        "@eslint/js": "^9.32.0",
+        "@next/eslint-plugin-next": "^15.4.4",
         "@tailwindcss/postcss": "^4.1.11",
-        "@types/node": "^22.16.4",
+        "@types/node": "22.16.5",
         "@types/react": "^19.1.8",
-        "@types/react-dom": "19.1.5",
+        "@types/react-dom": "^19.1.6",
         "@types/react-headroom": "^3.2.3",
-        "eslint": "^9.31.0",
-        "eslint-config-next": "^15.4.1",
+        "eslint": "^9.32.0",
+        "eslint-config-next": "^15.4.4",
         "eslint-plugin-import": "^2.32.0",
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^5.2.0",
@@ -56,7 +56,7 @@
         "tailwind-merge": "^3.3.1",
         "tailwindcss": "^4.1.11",
         "typescript": "^5.8.3",
-        "typescript-eslint": "^8.37.0",
+        "typescript-eslint": "^8.38.0",
       },
     },
   },
@@ -327,7 +327,7 @@
 
     "@types/react": ["@types/react@19.1.8", "", { "dependencies": { "csstype": "^3.0.2" } }, "sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g=="],
 
-    "@types/react-dom": ["@types/react-dom@19.1.5", "", { "peerDependencies": { "@types/react": "^19.0.0" } }, "sha512-CMCjrWucUBZvohgZxkjd6S9h0nZxXjzus6yDfUb+xLxYM7VvjKNH1tQrE9GWLql1XoOP4/Ds3bwFqShHUYraGg=="],
+    "@types/react-dom": ["@types/react-dom@19.1.6", "", { "peerDependencies": { "@types/react": "^19.0.0" } }, "sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw=="],
 
     "@types/react-headroom": ["@types/react-headroom@3.2.3", "", { "dependencies": { "@types/react": "*" } }, "sha512-rdgcMfoxN6wnGm8mSlwA7vuuK8ojXUI/tWHX1qJSAS7DNuvt7zv3zUtYs15UETEtE0Wc2YJCq0PZlHhZ+lRP4Q=="],
 
@@ -773,7 +773,7 @@
 
     "loose-envify": ["loose-envify@1.4.0", "", { "dependencies": { "js-tokens": "^3.0.0 || ^4.0.0" }, "bin": { "loose-envify": "cli.js" } }, "sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q=="],
 
-    "lucide-react": ["lucide-react@0.511.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-VK5a2ydJ7xm8GvBeKLS9mu1pVK6ucef9780JVUjw6bAjJL/QXnd4Y0p7SPeOUMC27YhzNCZvm5d/QX0Tp3rc0w=="],
+    "lucide-react": ["lucide-react@0.526.0", "", { "peerDependencies": { "react": "^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-uGWG/2RKuDLeQHCodn5cmJ9Zij80EstOdcBP+j//B2sr78w7woiEL4aMu6CRlRkyOyJ8sZry8QLhQTmZjynLdA=="],
 
     "magic-string": ["magic-string@0.30.17", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0" } }, "sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA=="],
 
@@ -1039,7 +1039,7 @@
 
     "yocto-queue": ["yocto-queue@0.1.0", "", {}, "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="],
 
-    "zod": ["zod@3.25.76", "", {}, "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="],
+    "zod": ["zod@4.0.10", "", {}, "sha512-3vB+UU3/VmLL2lvwcY/4RV2i9z/YU0DTV/tDuYjrwmx5WeJ7hwy+rGEEx8glHp6Yxw7ibRbKSaIFBgReRPe5KA=="],
 
     "@eslint-community/eslint-utils/eslint-visitor-keys": ["eslint-visitor-keys@3.4.3", "", {}, "sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag=="],
 
