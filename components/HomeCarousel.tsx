@@ -6,6 +6,7 @@ import Image from 'next/image'
 
 import Autoplay from 'embla-carousel-autoplay'
 
+
 import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
@@ -14,6 +15,8 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import base64 from '@/lib/base64'
+import images from '@/lib/images'
 
 interface Props {
   className?: string
@@ -31,20 +34,20 @@ export const HomeCarousel: React.FC<Props> = ({ className }) => {
       className={className}
     >
       <CarouselContent>
-        {[
-          // '/images/home/cancelled_in_june.jpeg',
-          // '/images/home/july_gift.jpeg',
-          '/images/home/virabhadrasana.jpeg',
-          '/images/home/healthy_back.jpeg',
-          '/images/home/jeet_kune_do.jpeg',
-          '/images/home/sarvangasana.jpeg',
-          '/images/home/kundalini.jpeg',
-          '/images/home/adho_mukha_svanasana.jpeg',
-        ].map((imageUrl) => (
-          <CarouselItem key={imageUrl}>
+        {images.map((image) => (
+          <CarouselItem key={image}>
             <Card>
               <CardContent className="flex p-0 aspect-auto items-center justify-center">
-                <Image priority src={imageUrl} className="rounded-lg" width={900} height={450} alt={imageUrl} />
+                <Image
+                  // priority
+                  src={`/images/home/${image}.webp`} 
+                  className="rounded-lg"
+                  width={900}
+                  height={450}
+                  alt={image}
+                  placeholder="blur"
+                  blurDataURL={base64[image]}
+                />
               </CardContent>
             </Card>
           </CarouselItem>

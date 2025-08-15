@@ -1,5 +1,3 @@
-import { Suspense } from 'react'
-
 import type { Metadata } from 'next'
 
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -27,9 +25,7 @@ const RootLayout: React.FC<Props> = ({ children }) => (
     <head />
     <body className={`${font.className} antialiased bg text-text flex flex-col min-h-screen`}>
      
-      <Suspense>
-        <Header />
-      </Suspense>
+      <Header />
       
       <main className="flex-auto mt-5">
         <Providers>{children}</Providers>

@@ -24,17 +24,13 @@ const links = [
   { key: 'contacts', href: 'contacts', title: 'Контакты' },
 ]
 
-interface Props {
-  className?: string
-}
-
-export const Header: React.FC<Props> = ({ className }) => {
+export const Header: React.FC = () => {
   const pathname = usePathname()
   const active = pathname?.split('/')[1]
   const [opened, setOpened] = React.useState(false)
 
   return (
-    <header className={className}>
+    <header className="md:min-h-30">
       <Headroom>
         <div className="bg max-md:hidden md:shadow-light">
           <Container className="flex items-center justify-between p-4">
