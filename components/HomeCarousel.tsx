@@ -42,8 +42,8 @@ export const HomeCarousel: React.FC<Props> = ({ className }) => {
                   // priority
                   src={`/images/home/${image}.webp`} 
                   className="rounded-lg"
-                  width={900}
-                  height={450}
+                  width={1280}
+                  height={624}
                   alt={image}
                   placeholder="blur"
                   blurDataURL={base64[image]}

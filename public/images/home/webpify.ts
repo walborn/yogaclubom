@@ -8,12 +8,12 @@ const base64: Record<string, string> = {}
 async function webpify(inputPath: string) {
   try {
     await sharp(`${inputPath}.jpeg`) // входящий файл (inputPath)
-      .resize({ width: 1280, height: 632, fit: 'inside' })
+      .resize({ width: 1280, height: 624, fit: 'inside' })
       .webp({ quality: 75 }) // настройка качества
       .toFile(`${inputPath}.webp`) // выходящий файл (inputPath)
     
     const buffer = await sharp(`${inputPath}.jpeg`)
-      .resize({ width: 160, height: 79, fit: 'inside' })
+      .resize({ width: 320, height: 156, fit: 'inside' })
       .toBuffer()
 
     // Конвертируем в base64
