@@ -15,7 +15,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import base64 from '@/lib/base64'
 import images from '@/lib/images'
 
 interface Props {
