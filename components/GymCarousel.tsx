@@ -27,17 +27,17 @@ export const GymCarousel: React.FC = () => {
     >
       <CarouselContent>
         {[
-          '/images/gallery/0.jpeg',
-          '/images/gallery/1.jpeg',
-          '/images/gallery/2.jpeg',
-          '/images/gallery/3.jpeg',
-          '/images/gallery/4.jpeg',
-          '/images/gallery/5.jpeg',
+          '/images/gallery/0.webp',
+          '/images/gallery/1.webp',
+          '/images/gallery/2.webp',
+          '/images/gallery/3.webp',
+          '/images/gallery/4.webp',
+          '/images/gallery/5.webp',
         ].map((imageUrl) => (
           <CarouselItem key={imageUrl}>
             <Card>
               <CardContent className="flex p-0 aspect-video items-center justify-center">
-                <Image src={imageUrl} className="rounded-lg" width={900} height={600} alt={imageUrl} priority />
+                <Image src={imageUrl} className="rounded-lg" width={1280} height={854} alt={imageUrl} priority />
               </CardContent>
             </Card>
           </CarouselItem>

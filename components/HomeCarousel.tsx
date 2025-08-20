@@ -39,14 +39,12 @@ export const HomeCarousel: React.FC<Props> = ({ className }) => {
             <Card>
               <CardContent className="flex p-0 aspect-auto items-center justify-center">
                 <Image
-                  // priority
+                  priority
                   src={`/images/home/${image}.webp`} 
                   className="rounded-lg"
                   width={1280}
                   height={624}
                   alt={image}
-                  placeholder="blur"
-                  blurDataURL={base64[image]}
                 />
               </CardContent>
             </Card>

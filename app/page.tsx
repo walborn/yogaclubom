@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 import { HomeCarousel } from '@/components/HomeCarousel'
 import { Location } from '@/components/icons/Location'
 import { Title } from '@/components/ui/title'
-import { Unlimited } from '@/components/Unlimited'
+// import { Unlimited } from '@/components/Unlimited'
 
 export const metadata: Metadata = {
   title: 'Главная | Yoga Club OM',
@@ -52,10 +52,10 @@ const HomePage: React.FC = () => (
         <strong>ЕДИНОБОРСТВА (ДЛЯ ДЕТЕЙ ОТ 5 ДО 14 ЛЕТ)</strong>
         <div className="item">Джит Кун-до - стиль, основанный Брюсом Ли</div>
       </section>
-      <section>
+      {/* <section>
         <Title size="lg">Акция: 2 занятия по цене 1!</Title>
         <Unlimited className="shadow-light p-5 rounded" />
-      </section>
+      </section> */}
     </div>
   </Container>
 )

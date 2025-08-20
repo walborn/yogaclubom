@@ -21,7 +21,7 @@ const MastersPage = () => {
         masters.map(([ key, { name, description }]) => (
           <li key={key} className="m-5 p-5 rounded shadow-light">
             <Link href="/masters/[id]" as={`/masters/${key}`}>
-              <Avatar className={'m-auto'} src={`/images/avatar/${key}.jpg`} alt={name} size={48} />
+              <Avatar className={'m-auto'} src={`/images/avatar/${key}.webp`} alt={name} size={48} />
               <Title size="md">{name}</Title>
               <p className="text-center">{description}</p>
             </Link>

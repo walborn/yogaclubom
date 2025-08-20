@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   return {
     title: `${master.name} | Yoga Club OM`,
     openGraph: {
-      images: [`/images/avatar/${id}.jpg`, ...previousImages],
+      images: [`/images/avatar/${id}.webp`, ...previousImages],
     },
   }
 }
@@ -45,7 +45,7 @@ const ProductPage = async ({ params }: Props) => {
 
   return (
     <Container className="flex flex-col my-10 px-5">
-      <Avatar className={`m-auto bg-[url(/images/avatar/short/${id}.jpg)]`} src={`/images/avatar/${id}.jpg`} alt={master.name} size={48} />
+      <Avatar className={`m-auto bg-[url(/images/avatar/${id}.webp)]`} src={`/images/avatar/${id}.webp`} alt={master.name} size={48} />
       <Title size="md">{master.name}</Title>
       <p>{master.description}</p>
     </Container>

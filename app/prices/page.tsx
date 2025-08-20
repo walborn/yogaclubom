@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 import { Container } from '@/components/Container'
 import { Title } from '@/components/ui/title'
-import { Unlimited } from '@/components/Unlimited'
+// import { Unlimited } from '@/components/Unlimited'
 
 export const metadata: Metadata = {
   title: 'Цены | Yoga Club OM',
@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 const PricesPage = () => (
   <Container className="my-8 flex flex-col gap-5">
-    <section className="px-5">
+    {/* <section className="px-5">
       <Title size="lg">Акция: 2 занятия по цене 1!</Title>
       <Unlimited />
-    </section>
+    </section> */}
     <section className="px-5 flex flex-col gap-2">
       <Title size="lg" className="mb-0">Стоимость групповых занятий</Title>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
