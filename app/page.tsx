@@ -6,7 +6,7 @@ import { Container } from '@/components/Container'
 import { HomeCarousel } from '@/components/HomeCarousel'
 import { Location } from '@/components/icons/Location'
 import { Title } from '@/components/ui/title'
-// import { Unlimited } from '@/components/Unlimited'
+import { Unlimited } from '@/components/Unlimited'
 
 export const metadata: Metadata = {
   title: 'Главная | Yoga Club OM',
@@ -30,6 +30,7 @@ const HomePage: React.FC = () => (
         целью которых является саморазвитие и помощь в этом другим людям.
         С 2014 года улучшаем жизнь Практикой!
       </section>
+
       <section>
         <Title size="lg" className="text-brand">Выбери свою практику</Title>
         Можно выбрать практику в удобное для Вас время, различного уровня сложности
@@ -37,25 +38,30 @@ const HomePage: React.FC = () => (
         Занятия проводят опытные и сертифицированные инструкторы, с которыми можно
         заниматься - <strong>индивидуально</strong> или <strong>в группе</strong>.
       </section>
-      <section><strong>ЙОГА:</strong>
-        <div className="item">Классическая Хатха йога</div>
-        <div className="item">Аштанга йога</div>
-        <div className="item">Кундалини йога</div>
-        <div className="item">Мягкие практики <strong>для беременных</strong></div>
-      </section>
-      <section>
-        <strong>СПЕЦИАЛЬНЫЕ НАПРАВЛЕНИЯ:</strong>
-        <div className="item">Практика &quot;Здоровая спина&quot;</div>
-        <div className="item">Общая физическая подготовка</div>
-      </section>
-      <section>
-        <strong>ЕДИНОБОРСТВА (ДЛЯ ДЕТЕЙ ОТ 5 ДО 14 ЛЕТ)</strong>
-        <div className="item">Джит Кун-до - стиль, основанный Брюсом Ли</div>
-      </section>
-      {/* <section>
-        <Title size="lg">Акция: 2 занятия по цене 1!</Title>
-        <Unlimited className="shadow-light p-5 rounded" />
-      </section> */}
+
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex-1 space-y-4">
+          <section><strong>ЙОГА:</strong>
+            <div className="item">Классическая Хатха йога</div>
+            <div className="item">Аштанга йога</div>
+            <div className="item">Кундалини йога</div>
+            <div className="item">Мягкие практики <strong>для беременных</strong></div>
+          </section>
+          <section>
+            <strong>СПЕЦИАЛЬНЫЕ НАПРАВЛЕНИЯ:</strong>
+            <div className="item">Практика &quot;Здоровая спина&quot;</div>
+            <div className="item">Общая физическая подготовка</div>
+          </section>
+          <section>
+            <strong>ЕДИНОБОРСТВА (ДЛЯ ДЕТЕЙ ОТ 5 ДО 14 ЛЕТ)</strong>
+            <div className="item">Джит Кун-до - стиль, основанный Брюсом Ли</div>
+          </section>
+        </div>
+        <section className="flex-1 p-5 shadow-light rounded">
+          <Title size="md">Акция:<br />2 занятия по цене 1!</Title>
+          <Unlimited className=" " />
+        </section>
+      </div>
     </div>
   </Container>
 )
