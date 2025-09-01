@@ -1,5 +1,4 @@
 export default [
-  '1sep_2400',
   'virabhadrasana',
   'healthy_back',
   'jeet_kune_do',
@@ -9,7 +8,6 @@ export default [
 ] as const
 
 export type Base64 = {
-  '1sep_2400': string
   'virabhadrasana': string
   'healthy_back': string
   'jeet_kune_do': string
