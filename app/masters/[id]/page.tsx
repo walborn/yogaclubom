@@ -6,12 +6,10 @@ import { Avatar } from '@/components/Avatar'
 import { Container } from '@/components/Container'
 import { Title } from '@/components/ui/title'
 
-// Генерируем статические параметры для всех мастеров :cite[3]
 export function generateStaticParams() {
   return Array.from(masters.keys()).map((id) => ({ id }))
 }
 
-// Определяем тип для параметров :cite[1]:cite[6]
 type Params = Promise<{ id: string }>
 
 interface Props {
@@ -19,7 +17,6 @@ interface Props {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // Ждем разрешения Promise params :cite[6]:cite[8]
   const { id } = await params
   const master = masters.get(id)
   
@@ -34,7 +31,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const MasterPage = async ({ params }: Props) => {
-  // Ждем разрешения Promise params :cite[1]:cite[6]
   const { id } = await params
   const master = masters.get(id)
 
