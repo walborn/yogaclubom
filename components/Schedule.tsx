@@ -20,7 +20,6 @@ export const Schedule = ({ values }: Props) => {
   const [day, setDay] = React.useState(getNowDay())
   const [view, setView] = React.useState('day') // one day or whole week
 
-  console.log(values)
   const lessons = getLessons(values)
   const table = lessons.reduce((r: Row[], dayLessons: LessonWithId[], weekday: number) => {
     dayLessons.forEach((lesson: LessonWithId) => {
