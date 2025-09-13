@@ -1,6 +1,7 @@
 {
   "name": "yogaclubom",
-  "version": "2.0.0",
+  "homepage": "https://yogaclubom.ru",
+  "version": "3.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
