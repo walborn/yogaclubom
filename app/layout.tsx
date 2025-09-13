@@ -5,7 +5,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Analytics } from '@/components/Analytics'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { Providers } from '@/components/Providers'
 import { opensans as font } from '@/components/ui/fonts'
 import './globals.css'
 
@@ -28,7 +27,7 @@ const RootLayout: React.FC<Props> = ({ children }) => (
       <Header />
       
       <main className="flex-auto mt-5">
-        <Providers>{children}</Providers>
+        {children}
       </main>
       
       <Footer />

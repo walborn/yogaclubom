@@ -11,7 +11,6 @@ interface Props {
 }
 export default function Error({ error, reset }: Props) {
   useEffect(() => {
-    // Optionally log the error to an error reporting service
     console.error(error)
   }, [error])
  
@@ -24,7 +23,6 @@ export default function Error({ error, reset }: Props) {
         variant="default"
         className="mt-4 rounded-md bg-amber-500 px-4 py-2 text-sm text-white transition-colors hover:bg-amber-600 cursor-pointer"
         onClick={
-          // Attempt to recover by trying to re-render the invoices route
           () => reset()
         }
       >
