@@ -1,14 +1,14 @@
 import React from 'react'
 
-import type { LessonHuman } from '@/lib/definitions'
+import type { FullLesson } from '@/lib/definitions'
 
 interface Props {
-  value: LessonHuman
+  value: FullLesson
 }
 
 export const LessonCard = ({ value }: Props) => (
   <>
-    <div className="text-[#468ee5] font-bold">{value.start} - {value.finish}</div>
+    <div className="text-[#468ee5] font-bold">{value.startRu} - {value.finishRu}</div>
     <div>{value.title}</div>
     <div className="font-light">{value.master}</div>
     <div>{value.level}</div>

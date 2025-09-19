@@ -44,3 +44,19 @@ export type LessonHuman = {
 // API
 export type UserWithId = User & { id: string }
 export type LessonWithId = Lesson & { id: string }
+
+export type FullLesson = {
+  id: string
+  
+  weekdayRu: WeekDay
+  startRu: StrictTimeString
+  finishRu: StrictTimeString
+  title: string
+  master: string
+  level: string
+  notes: string
+
+  weekday: 0 | 1 | 2 | 3 | 4 | 5 | 6
+  start: number // in minutes
+  finish: number // in minutes
+}

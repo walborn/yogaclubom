@@ -5,24 +5,22 @@ import React from 'react'
 import { Container } from '@/components/Container'
 import { LessonCard } from '@/components/LessonCard'
 import { Button } from '@/components/ui/button'
-import type { LessonWithId } from '@/lib/definitions'
-import { getNowDay, weekdays, humanizeLesson } from '@/lib/placeholder.lessons'
-import { getLessons } from '@/lib/placeholder.lessons'
+import type { FullLesson } from '@/lib/definitions'
+import { getNowDay, weekdays } from '@/lib/placeholder.lessons'
 import { cn } from '@/lib/utils'
 
-type Row = Record<string, LessonWithId[]>
+type Row = Record<string, FullLesson[]>
 
 interface Props {
-  values: LessonWithId[]
+  values: FullLesson[][]
 }
 
-export const Schedule = ({ values }: Props) => {
+export const Schedule = ({ values: lessons }: Props) => {
   const [day, setDay] = React.useState(getNowDay())
   const [view, setView] = React.useState('day') // one day or whole week
 
-  const lessons = getLessons(values)
-  const table = lessons.reduce((r: Row[], dayLessons: LessonWithId[], weekday: number) => {
-    dayLessons.forEach((lesson: LessonWithId) => {
+  const table = lessons.reduce((r: Row[], dayLessons: FullLesson[], weekday: number) => {
+    dayLessons.forEach((lesson) => {
       const hour: number = lesson.start / 60 | 0
       if (!r[hour]) r[hour] = { [weekday]: [lesson] }
       else if (!Array.isArray(r[hour][weekday])) r[hour][weekday] = [lesson]
@@ -54,12 +52,12 @@ export const Schedule = ({ values }: Props) => {
       </ul>
       <ul>
         {
-          lessons[day].map((i: LessonWithId) => (
+          lessons[day].map((i) => (
             <li
               key={i.id}
               className="p-5 my-3 rounded-md shadow-light"
             >
-              <LessonCard value={humanizeLesson(i)} />
+              <LessonCard value={i} />
             </li>
           ))
         }
@@ -115,12 +113,12 @@ export const Schedule = ({ values }: Props) => {
                       >
                         <ul>
                           {
-                            row[weekday]?.map((i: LessonWithId) => (
+                            row[weekday]?.map((i) => (
                               <li
                                 key={i.id}
                                 className="p-5 my-3 rounded-md shadow-light"
                               >
-                                <LessonCard value={humanizeLesson(i)} />
+                                <LessonCard value={i} />
                               </li>
                             ))
                           }
