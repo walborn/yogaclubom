@@ -14,6 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import images from '@/data/galleryImages'
 
 export const GymCarousel: React.FC = () => {
   const plugin = React.useRef(
@@ -26,14 +27,7 @@ export const GymCarousel: React.FC = () => {
       onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
-        {[
-          '/images/gallery/0.webp',
-          '/images/gallery/1.webp',
-          '/images/gallery/2.webp',
-          '/images/gallery/3.webp',
-          '/images/gallery/4.webp',
-          '/images/gallery/5.webp',
-        ].map((imageUrl) => (
+        {images.map((imageUrl) => (
           <CarouselItem key={imageUrl}>
             <Card>
               <CardContent className="flex p-0 aspect-video items-center justify-center">

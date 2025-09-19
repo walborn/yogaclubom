@@ -10,18 +10,18 @@ async function webpify(inputPath: string) {
     await sharp(`${inputPath}.jpeg`) // входящий файл (inputPath)
       .resize({ width: 1280, height: 624, fit: 'inside' })
       .webp({ quality: 75 }) // настройка качества
-      .toFile(`${inputPath}.webp`) // выходящий файл (inputPath)
+      .toFile(`111${inputPath}.webp`) // выходящий файл (inputPath)
     
-    const buffer = await sharp(`${inputPath}.jpeg`)
-      .resize({ width: 320, height: 156, fit: 'inside' })
-      .toBuffer()
+    // const buffer = await sharp(`${inputPath}.jpeg`)
+    //   .resize({ width: 320, height: 156, fit: 'inside' })
+    //   .toBuffer()
 
-    // Конвертируем в base64
-    base64[inputPath] = `data:image/jpeg;base64,${buffer.toString('base64')}`
+    // // Конвертируем в base64
+    // base64[inputPath] = `data:image/jpeg;base64,${buffer.toString('base64')}`
     
-    console.log(`✅ BlurDataURL сгенерирован в файл ${inputPath}.base64`)
+    // console.log(`✅ BlurDataURL сгенерирован в файл ${inputPath}.base64`)
     
-    return base64
+    // return base64
   } catch (error) {
     console.error('Ошибка:', error)
   }

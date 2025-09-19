@@ -15,7 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
-import images from '@/lib/images'
+import images from '@/data/homeImages'
 
 interface Props {
   className?: string
@@ -25,6 +25,7 @@ export const HomeCarousel: React.FC<Props> = ({ className }) => {
   const plugin = React.useRef(
     Autoplay({ delay: 4000, stopOnInteraction: true }),
   )
+
   return (
     <Carousel
       plugins={[plugin.current]}
@@ -33,17 +34,17 @@ export const HomeCarousel: React.FC<Props> = ({ className }) => {
       className={className}
     >
       <CarouselContent>
-        {images.map((image) => (
-          <CarouselItem key={image}>
+        {images.map((imageUrl) => (
+          <CarouselItem key={imageUrl}>
             <Card>
               <CardContent className="flex p-0 aspect-auto items-center justify-center">
                 <Image
                   priority
-                  src={`/images/home/${image}.webp`} 
+                  src={imageUrl} 
                   className="rounded-lg"
                   width={1280}
                   height={624}
-                  alt={image}
+                  alt={imageUrl.split('/').at(-1)?.slice(0, -5) || ''}
                 />
               </CardContent>
             </Card>
