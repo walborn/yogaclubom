@@ -22,9 +22,7 @@ export default function Error({ error, reset }: Props) {
       <Button
         variant="default"
         className="mt-4 rounded-md bg-amber-500 px-4 py-2 text-sm text-white transition-colors hover:bg-amber-600 cursor-pointer"
-        onClick={
-          () => reset()
-        }
+        onClick={() => reset()}
       >
         Try again
       </Button>

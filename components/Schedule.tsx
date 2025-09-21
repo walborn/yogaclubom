@@ -30,7 +30,7 @@ export const Schedule = ({ values: lessons }: Props) => {
   }, []).map((i: Row, hour: number) => ({ hour, row: i }))
 
   if (view === 'day') return (
-    <Container className={'text-center p-5'}>
+    <Container className="text-center p-5">
       <Button
         className="mb-5 bg-brand-400-hovered cursor-pointer"
         onClick={() => setView('week')}
