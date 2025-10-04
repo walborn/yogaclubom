@@ -155,7 +155,7 @@ const lessons: Lesson[] = [
     title: 'Общая физическая подготовка',
     level: 'Любой',
     master: 'Сергей',
-    notes: 'по предварительной записи',
+    notes: '',
   },
   {
     weekday: 'Сб',
