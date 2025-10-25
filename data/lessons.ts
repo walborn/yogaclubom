@@ -10,7 +10,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '3 ноября отмена',
   },
   {
     weekday: 'Пн',
@@ -28,7 +28,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '3 ноября отмена',
   },
   {
     weekday: 'Пн',
@@ -37,7 +37,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Наталья',
-    notes: '',
+    notes: '3 ноября по предварительной записи',
   },
 
   // Вторник
@@ -48,7 +48,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    notes: '',
+    notes: '4 ноября по предварительной записи',
   },
   {
     weekday: 'Вт',
@@ -57,7 +57,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Средний',
     master: 'Нина',
-    notes: '',
+    notes: '4 ноября отмена',
   },
   
   // Среда
@@ -155,7 +155,7 @@ const lessons: Lesson[] = [
     title: 'Общая физическая подготовка',
     level: 'Любой',
     master: 'Сергей',
-    notes: '',
+    notes: '1 ноября отмена',
   },
   {
     weekday: 'Сб',
@@ -164,7 +164,7 @@ const lessons: Lesson[] = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    notes: '',
+    notes: '1 ноября отмена',
   },
   {
     weekday: 'Сб',
@@ -173,7 +173,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '',
+    notes: '1 ноября отмена',
   },
   {
     weekday: 'Сб',
@@ -182,7 +182,7 @@ const lessons: Lesson[] = [
     title: 'Здоровая спина (йога-терапия)',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '',
+    notes: '1 ноября отмена',
   },
 
   // Воскресенье
@@ -220,7 +220,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога с акцентом на медитацию',
     level: 'Любой',
     master: 'Андрей',
-    notes: '26 октября отмена',
+    notes: 'по предварительной записи',
   },
 ]
 
