@@ -1,4 +1,5 @@
 export const images: string[] = [
+  'images/home/IMG_0837.JPG',
   'images/home/virabhadrasana.webp',
   'images/home/healthy_back.webp',
   'images/home/jeet_kune_do.webp',
