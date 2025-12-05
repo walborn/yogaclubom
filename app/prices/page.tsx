@@ -18,39 +18,39 @@ const PricesPage = () => (
     <section className="px-5 flex flex-col gap-2">
       <Title size="lg" className="mb-0">Стоимость групповых занятий</Title>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">1000 рублей</span> - разовое занятие.
+        <span className="text-lg font-semibold">1200 рублей</span> - разовое занятие.
       </div>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">3200 рублей</span> - абонемент на 4 занятия в течение 1-го месяца
-        <div className="text-sm text-[#5d616f]">{3200/4} руб. одно занятие</div>
+        <span className="text-lg font-semibold">3400 рублей</span> - абонемент на 4 занятия в течение 1-го месяца
+        <div className="text-sm text-[#5d616f]">{3400/4} руб. одно занятие</div>
       </div>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">6000 рублей</span> - абонемент на 8 занятий в течение 1-го месяца
-        <div className="text-sm text-[#5d616f]">{6000/8} руб. одно занятие</div>
+        <span className="text-lg font-semibold">6400 рублей</span> - абонемент на 8 занятий в течение 1-го месяца
+        <div className="text-sm text-[#5d616f]">{6400/8} руб. одно занятие</div>
       </div>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">8400 рублей</span> - абонемент на 12 занятий в течение 2-х месяцев
-        <div className="text-sm text-[#5d616f]">{8400/12} руб. одно занятие</div>
+        <span className="text-lg font-semibold">9000 рублей</span> - абонемент на 12 занятий в течение 2-х месяцев
+        <div className="text-sm text-[#5d616f]">{9000/12} руб. одно занятие</div>
       </div>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">15600 рублей</span> - абонемент на 24 занятия в течение 3-х месяцев
-        <div className="text-sm text-[#5d616f]">{15600/24} руб. одно занятие</div>
+        <span className="text-lg font-semibold">16800 рублей</span> - абонемент на 24 занятия в течение 3-х месяцев
+        <div className="text-sm text-[#5d616f]">{16800/24} руб. одно занятие</div>
       </div>
     </section>
     <section className="px-5 flex flex-col gap-2">
       <Title size="lg" className="mb-0">Стоимость индивидуальных занятий</Title>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">3500 рублей</span> - разовое занятие (<b>1</b> час).
+        <span className="text-lg font-semibold">4000 рублей</span> - разовое занятие (<b>1</b> час).
       </div>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">4300 рублей</span> - разовое занятие (<b>1.5</b> часа).
+        <span className="text-lg font-semibold">4800 рублей</span> - разовое занятие (<b>1.5</b> часа).
       </div>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
-        <span className="text-lg font-semibold">13000 рублей</span> - абонемент на <b>4</b> занятия (по <b>1</b> часу) в течение 1-го месяца.
+        <span className="text-lg font-semibold">15000 рублей</span> - абонемент на <b>4</b> занятия (по <b>1</b> часу) в течение 1-го месяца.
       </div>
       <div className="shadow-lightest hover:shadow-light p-5 rounded">
         <span className="text-lg font-semibold">
-        16000 рублей
+        18000 рублей
         </span> - абонемент на <b>4</b> занятия (по <b>1.5</b> часа) в течение 1-го месяца.
       </div>
     </section>
