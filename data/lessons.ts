@@ -10,7 +10,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '5 января отмена',
   },
   {
     weekday: 'Пн',
@@ -19,7 +19,7 @@ const lessons: Lesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: '',
+    notes: '5 января отмена',
   },
   {
     weekday: 'Пн',
@@ -28,7 +28,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '5 января отмена',
   },
   {
     weekday: 'Пн',
@@ -37,7 +37,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Наталья',
-    notes: '',
+    notes: '5 января отмена',
   },
 
   // Вторник
@@ -57,7 +57,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Средний',
     master: 'Нина',
-    notes: '',
+    notes: '30 декабря и 6 января отмена',
   },
   
   // Среда
@@ -77,7 +77,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '31 декабря и 7 января отмена',
   },
   {
     weekday: 'Ср',
@@ -86,7 +86,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения.',
-    notes: '',
+    notes: '31декабря и 7 января отмена',
   },
 
   // Четверг
@@ -97,7 +97,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '1 января отмена',
   },
   {
     weekday: 'Чт',
@@ -106,7 +106,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    notes: 'по предварительной записи',
+    notes: '1 и 8 января отмена',
   },
   {
     weekday: 'Чт',
@@ -115,7 +115,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Средний ',
     master: 'Нина',
-    notes: '',
+    notes: '1 и 8 января отмена',
   },
 
   // Пятница
@@ -126,7 +126,7 @@ const lessons: Lesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: '',
+    notes: '2 и 9 января отмена',
   },
   {
     weekday: 'Пт',
@@ -135,7 +135,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога для начинающих',
     level: 'Средний',
     master: 'Ирина',
-    notes: '',
+    notes: '2 и 9 января отмена',
   },
   {
     weekday: 'Пт',
@@ -144,7 +144,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Наталья',
-    notes: '',
+    notes: '9 января в 19:00 по предварительной записи',
   },
 
   // Суббота
@@ -155,7 +155,7 @@ const lessons: Lesson[] = [
     title: 'Общая физическая подготовка',
     level: 'Любой',
     master: 'Сергей',
-    notes: '',
+    notes: '3 января отмена',
   },
   {
     weekday: 'Сб',
@@ -164,7 +164,7 @@ const lessons: Lesson[] = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    notes: '',
+    notes: '3 января отмена',
   },
   {
     weekday: 'Сб',
@@ -173,7 +173,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '',
+    notes: '3 января отмена',
   },
   {
     weekday: 'Сб',
@@ -182,7 +182,7 @@ const lessons: Lesson[] = [
     title: 'Здоровая спина (йога-терапия)',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '',
+    notes: '3 января отмена',
   },
 
   // Воскресенье
