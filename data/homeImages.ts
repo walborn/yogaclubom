@@ -1,5 +1,4 @@
 export const images: string[] = [
-  'images/home/best-gift-for-yoga-girl.webp',
   'images/home/virabhadrasana.webp',
   'images/home/healthy_back.webp',
   'images/home/jeet_kune_do.webp',
