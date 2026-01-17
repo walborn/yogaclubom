@@ -48,7 +48,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    notes: 'по предварительной записи',
+    notes: '20 января отмена',
   },
   {
     weekday: 'Вт',
@@ -97,7 +97,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Алексей',
-    notes: '15 января отмена',
+    notes: '22 января отмена',
   },
   {
     weekday: 'Чт',
