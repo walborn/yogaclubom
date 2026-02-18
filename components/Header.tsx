@@ -10,6 +10,7 @@ import Headroom from 'react-headroom'
 
 import { Container } from '@/components/Container'
 import { Location } from '@/components/icons/Location'
+import { Max } from '@/components/icons/Max'
 import { Phone } from '@/components/icons/Phone'
 import { Telegram } from '@/components/icons/Telegram'
 import { Whatsapp } from '@/components/icons/Whatsapp'
@@ -46,7 +47,7 @@ export const Header: React.FC = () => {
               </Location>
             </div>
 
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <Phone
                 href="tel:+7916876541"
                 className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
@@ -56,11 +57,15 @@ export const Header: React.FC = () => {
 
               <Whatsapp
                 href="https://wa.me/79168765413"
-                className="flex items-center [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
+                className="w-4 flex items-center  [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
               />
               <Telegram
                 href="tg://resolve?domain=yoga_club_om"
-                className="flex items-center [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
+                className="w-4 flex items-center [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
+              />
+              <Max
+                className="w-4 flex items-center [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
+                href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
               />
             </div>
             <div className="md:hidden" onClick={() => setOpened(true)}>

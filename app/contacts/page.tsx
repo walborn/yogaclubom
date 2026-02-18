@@ -4,6 +4,7 @@ import { Container } from '@/components/Container'
 import { Email } from '@/components/icons/Email'
 import { File } from '@/components/icons/File'
 import { Location } from '@/components/icons/Location'
+import { Max } from '@/components/icons/Max'
 import { Phone } from '@/components/icons/Phone'
 import { Telegram } from '@/components/icons/Telegram'
 import { Vkontakte } from '@/components/icons/Vkontakte'
@@ -44,6 +45,10 @@ const ContactsPage = () => {
               href="tg://resolve?domain=yoga_club_om"
               className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             />
+            <Max
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
+              href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
+            />
           </li>
           <li>
             <Phone
@@ -76,6 +81,14 @@ const ContactsPage = () => {
             >
               Telegram
             </Telegram>
+          </li>
+          <li>
+            <Max
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
+              href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
+            >
+              Max
+            </Max>
           </li>
           <li>
             <File

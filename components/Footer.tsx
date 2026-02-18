@@ -10,6 +10,7 @@ import { Container } from '@/components/Container'
 import { Email } from '@/components/icons/Email'
 import { File } from '@/components/icons/File'
 import { Location } from '@/components/icons/Location'
+import { Max } from '@/components/icons/Max'
 import { Phone } from '@/components/icons/Phone'
 import { Telegram } from '@/components/icons/Telegram'
 import { Whatsapp } from '@/components/icons/Whatsapp'
@@ -36,6 +37,10 @@ export const Footer: React.FC<Props> = ({ className }) => {
             className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-6 fill-brand-400"
             href="https://t.me/yogaclub_om_moscow"
           />
+          <Max
+            className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-6 fill-brand-400"
+            href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
+          />
         </div>
         <ul>
           <li>
@@ -59,6 +64,10 @@ export const Footer: React.FC<Props> = ({ className }) => {
             />
             <Telegram
               href="tg://resolve?domain=yoga_club_om"
+              className="ml-6 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
+            />
+            <Max
+              href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
               className="ml-6 [&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400 [&>svg]:absolute [&>svg]:top-1/2 [&>svg]:-translate-y-1/2"
             />
           </li>
@@ -86,6 +95,14 @@ export const Footer: React.FC<Props> = ({ className }) => {
             >
               Telegram
             </Telegram>
+          </li>
+          <li>
+            <Max
+              href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
+              className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
+            >
+              Max
+            </Max>
           </li>
           <li>
             <File
