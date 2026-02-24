@@ -47,7 +47,7 @@ const lessons: Lesson[] = [
     finish: '19:25',
     title: 'Хатха-йога с акцентом на медитацию',
     level: 'Любой',
-    master: 'Андрей',
+    master: 'Алексей',
     notes: 'по предварительной записи',
   },
   {
@@ -183,7 +183,7 @@ const lessons: Lesson[] = [
     finish: '12:30',
     title: 'Хатха-йога',
     level: 'Любой',
-    master: 'Алексей',
+    master: 'Ксения',
     notes: 'по предварительной записи',
   },
   {
