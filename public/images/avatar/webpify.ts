@@ -22,6 +22,7 @@ const images = [
   'natalia_kobzeva',
   'natalia_permyakova',
   'nina_kuznetsova',
+  'kseniya_kuznetsova',
   'sergey_shkaev',
   'svetlana_krylova',
   'tatiana_dedova',

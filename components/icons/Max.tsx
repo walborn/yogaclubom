@@ -9,16 +9,17 @@ interface Props {
 export const Max: React.FC<Props> = ({ className, children, href }) => (
   <Link href={href} className={className}>
     <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+      <title>max messenger</title>
       <defs>
         <linearGradient id="b">
-          <stop offset="0" stop-color="#00f"/>
-          <stop offset="1" stop-opacity="0"/>
-          <stop offset="1" stop-opacity="0"/>
+          <stop offset="0" stopColor="#00f"/>
+          <stop offset="1" stopOpacity="0"/>
+          <stop offset="1" stopOpacity="0"/>
         </linearGradient>
         <linearGradient id="a">
-          <stop offset="0" stop-color="#4cf"/>
-          <stop offset=".662" stop-color="#53e"/>
-          <stop offset="1" stop-color="#93d"/>
+          <stop offset="0" stopColor="#4cf"/>
+          <stop offset=".662" stopColor="#53e"/>
+          <stop offset="1" stopColor="#93d"/>
         </linearGradient>
         <linearGradient id="c" x1="117.847" x2="1000" y1="760.536" y2="500" gradientUnits="userSpaceOnUse" href="#a"/>
         <radialGradient id="d" cx="-87.392" cy="1166.116" r="500" fx="-87.392" fy="1166.116" gradientTransform="rotate(51.356 1551.478 559.3)scale(2.42703433 1)" gradientUnits="userSpaceOnUse" href="#b"/>
