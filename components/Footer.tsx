@@ -39,7 +39,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
           />
           <Max
             className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-6 fill-brand-400"
-            href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
+            href="https://max.ru/join/u0lFRVYRJRZX7_m9l0Ip8BQlMGoGrYIgogtqW04cawU"
           />
         </div>
         <ul>
@@ -98,7 +98,7 @@ export const Footer: React.FC<Props> = ({ className }) => {
           </li>
           <li>
             <Max
-              href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
+              href="https://max.ru/join/u0lFRVYRJRZX7_m9l0Ip8BQlMGoGrYIgogtqW04cawU"
               className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
             >
               Max

@@ -85,7 +85,7 @@ const ContactsPage = () => {
           <li>
             <Max
               className="[&>svg]:mr-1 [&>svg]:hover:fill-telegram [&>svg]:inline [&>svg]:h-4 fill-brand-400"
-              href="https://max.ru/u/f9LHodD0cOJIJb2VGTT9LM_5SlF3ZhgXEpzGCfqHQp6kw5aFMbFUtBMS4CU"
+              href="https://max.ru/join/u0lFRVYRJRZX7_m9l0Ip8BQlMGoGrYIgogtqW04cawU"
             >
               Max
             </Max>
