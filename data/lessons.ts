@@ -126,7 +126,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога для начинающих',
     level: 'Средний',
     master: 'Ирина',
-    notes: '',
+    notes: '13 марта самостоятельная практика',
   },
   {
     weekday: 'Пт',
@@ -146,7 +146,7 @@ const lessons: Lesson[] = [
     title: 'Общая физическая подготовка',
     level: 'Любой',
     master: 'Сергей',
-    notes: '7 марта отмена',
+    notes: '',
   },
   {
     weekday: 'Сб',
@@ -155,7 +155,7 @@ const lessons: Lesson[] = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    notes: '7 марта отмена',
+    notes: '',
   },
   {
     weekday: 'Сб',
@@ -164,7 +164,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '7 марта отмена',
+    notes: '',
   },
   {
     weekday: 'Сб',
@@ -173,7 +173,7 @@ const lessons: Lesson[] = [
     title: 'Здоровая спина (йога-терапия)',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '7 марта отмена',
+    notes: '',
   },
 
   // Воскресенье
