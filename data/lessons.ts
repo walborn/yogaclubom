@@ -183,7 +183,7 @@ const lessons: Lesson[] = [
     finish: '12:30',
     title: 'Хатха-йога',
     level: 'Любой',
-    master: 'Ксения',
+    master: 'Алексей',
     notes: 'по предварительной записи',
   },
   {
