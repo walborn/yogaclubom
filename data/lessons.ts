@@ -57,7 +57,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Средний',
     master: 'Нина',
-    notes: '',
+    notes: '28 апреля и 5 мая отмена',
   },
   
   // Среда
@@ -106,7 +106,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Средний ',
     master: 'Нина',
-    notes: '',
+    notes: '30 апреля и 7 мая отмена',
   },
 
   // Пятница
@@ -126,7 +126,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога для начинающих',
     level: 'Средний',
     master: 'Ирина',
-    notes: '',
+    notes: '1 и 8 мая отмена',
   },
   {
     weekday: 'Пт',
@@ -135,7 +135,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Наталья',
-    notes: '',
+    notes: '1 и 8 мая отмена',
   },
 
   // Суббота
@@ -155,7 +155,7 @@ const lessons: Lesson[] = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    notes: '',
+    notes: '2 и 9 мая отмена',
   },
   {
     weekday: 'Сб',
@@ -164,7 +164,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '',
+    notes: '2 и 9 мая отмена',
   },
   {
     weekday: 'Сб',
@@ -173,7 +173,7 @@ const lessons: Lesson[] = [
     title: 'Здоровая спина (йога-терапия)',
     level: 'Лёгкий',
     master: 'Евгения',
-    notes: '',
+    notes: '2 и 9 мая отмена',
   },
 
   // Воскресенье
