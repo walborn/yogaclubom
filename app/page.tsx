@@ -45,7 +45,7 @@ const HomePage: React.FC = () => (
             <div className="item">Классическая Хатха йога</div>
             <div className="item">Аштанга йога</div>
             <div className="item">Кундалини йога</div>
-            <div className="item">Мягкие практики <strong>для беременных</strong></div>
+            <div className="item">Мягкие практики <strong>с медитацией</strong></div>
           </section>
           <section>
             <strong>СПЕЦИАЛЬНЫЕ НАПРАВЛЕНИЯ:</strong>
