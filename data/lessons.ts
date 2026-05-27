@@ -43,15 +43,6 @@ const lessons: Lesson[] = [
   // Вторник
   {
     weekday: 'Вт',
-    start: '18:00',
-    finish: '19:25',
-    title: 'Хатха-йога',
-    level: 'Любой',
-    master: 'Алексей',
-    notes: 'по предварительной записи',
-  },
-  {
-    weekday: 'Вт',
     start: '19:30',
     finish: '21:00',
     title: 'Хатха-йога',
@@ -177,15 +168,6 @@ const lessons: Lesson[] = [
   },
 
   // Воскресенье
-  {
-    weekday: 'Вс',
-    start: '11:00',
-    finish: '12:30',
-    title: 'Хатха-йога',
-    level: 'Любой',
-    master: 'Алексей',
-    notes: 'по предварительной записи',
-  },
   {
     weekday: 'Вс',
     start: '17:15',
