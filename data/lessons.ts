@@ -175,7 +175,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога для начинающих',
     level: 'Лёгкий',
     master: 'Ксения',
-    notes: '31 мая отмена',
+    notes: '7 июня отмена',
   },
   {
     weekday: 'Вс',
