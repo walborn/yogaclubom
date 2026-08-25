@@ -77,7 +77,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '2 и 9 сентября отмена',
   },
   {
     weekday: 'Ср',
@@ -97,7 +97,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога (майсор-класс)',
     level: 'Сложный',
     master: 'Ирина',
-    notes: '',
+    notes: '3 и 10 сентября отмена',
   },
   {
     weekday: 'Чт',
@@ -106,7 +106,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Ксения',
-    notes: 'с сентября',
+    notes: 'с 3 сентября по предварительной записи',
   },
   {
     weekday: 'Чт',
@@ -135,7 +135,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога для начинающих',
     level: 'Средний',
     master: 'Ирина',
-    notes: '28 августа отмена',
+    notes: '28.08, 4.09 и 11.09 отмена',
   },
   {
     weekday: 'Пт',
