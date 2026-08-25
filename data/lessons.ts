@@ -52,6 +52,15 @@ const lessons: Lesson[] = [
   // Вторник
   {
     weekday: 'Вт',
+    start: '18:00',
+    finish: '19:25',
+    title: 'Хатха-йога',
+    level: 'Любой',
+    master: 'Ксения',
+    notes: 'с сентября',
+  },
+  {
+    weekday: 'Вт',
     start: '19:30',
     finish: '21:00',
     title: 'Хатха-йога',
