@@ -126,7 +126,7 @@ const lessons: Lesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: 'с 11 сентября',
+    notes: 'с 7 сентября',
   },
   {
     weekday: 'Пт',
