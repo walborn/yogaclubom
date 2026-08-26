@@ -19,7 +19,7 @@ const lessons: Lesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: 'с 7 сентября',
+    notes: 'с сентября',
   },
   {
     weekday: 'Пн',
@@ -29,15 +29,6 @@ const lessons: Lesson[] = [
     level: 'Сложный',
     master: 'Ирина',
     notes: '31.08 и 07.09 отмена',
-  },
-  {
-    weekday: 'Пн',
-    start: '19:00',
-    finish: '20:30',
-    title: 'Хатха-йога с акцентом на медитацию',
-    level: 'Любой',
-    master: 'Андрей',
-    notes: 'по предварительной записи',
   },
   {
     weekday: 'Пн',
@@ -126,7 +117,7 @@ const lessons: Lesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: 'с 7 сентября',
+    notes: 'с сентября',
   },
   {
     weekday: 'Пт',
