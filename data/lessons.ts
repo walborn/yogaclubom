@@ -19,7 +19,7 @@ const lessons: Lesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: 'с сентября',
+    notes: '',
   },
   {
     weekday: 'Пн',
@@ -97,7 +97,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Любой',
     master: 'Ксения',
-    notes: 'с сентября по предварительной записи',
+    notes: 'по предварительной записи',
   },
   {
     weekday: 'Чт',
@@ -106,7 +106,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога',
     level: 'Средний ',
     master: 'Нина',
-    notes: 'с сентября',
+    notes: '',
   },
 
   // Пятница
@@ -117,7 +117,7 @@ const lessons: Lesson[] = [
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
     master: 'Сергей',
-    notes: 'с сентября',
+    notes: '',
   },
   {
     weekday: 'Пт',
@@ -146,7 +146,7 @@ const lessons: Lesson[] = [
     title: 'Общая физическая подготовка',
     level: 'Любой',
     master: 'Сергей',
-    notes: 'отмена до октября',
+    notes: 'с октября',
   },
   {
     weekday: 'Сб',
