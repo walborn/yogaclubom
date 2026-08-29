@@ -46,7 +46,7 @@ const lessons: Lesson[] = [
     start: '19:30',
     finish: '21:00',
     title: 'Хатха-йога',
-    level: 'Средний',
+    level: 'Любой',
     master: 'Нина',
     notes: '',
   },
@@ -86,7 +86,7 @@ const lessons: Lesson[] = [
     start: '19:30',
     finish: '21:00',
     title: 'Хатха-йога',
-    level: 'Средний ',
+    level: 'Любой',
     master: 'Нина',
     notes: '',
   },
@@ -175,7 +175,7 @@ const lessons: Lesson[] = [
     title: 'Хатха-йога с акцентом на медитацию',
     level: 'Любой',
     master: 'Андрей',
-    notes: 'с сентября по предварительной записи',
+    notes: 'с сентября',
   },
 ]
 
