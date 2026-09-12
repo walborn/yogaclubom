@@ -108,7 +108,7 @@ const lessons: Lesson[] = [
     title: 'Аштанга-йога для начинающих',
     level: 'Средний',
     master: 'Ирина',
-    notes: '11 и 18 сентября отмена',
+    notes: '18 сентября отмена',
   },
   {
     weekday: 'Пт',
@@ -137,7 +137,7 @@ const lessons: Lesson[] = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    notes: '',
+    notes: '23 сентября отмена',
   },
   {
     weekday: 'Сб',
