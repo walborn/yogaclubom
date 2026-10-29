@@ -18,7 +18,7 @@ const lessons: Lesson[] = [
     finish: '17:45',
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
-    master: 'Сергей',
+    master: 'Дмитрий',
     notes: '',
   },
   {
@@ -98,7 +98,7 @@ const lessons: Lesson[] = [
     finish: '17:45',
     title: 'Джит Кун-До детская группа',
     level: '5-14 лет',
-    master: 'Сергей',
+    master: 'Дмитрий',
     notes: '',
   },
   {
@@ -128,7 +128,7 @@ const lessons: Lesson[] = [
     title: 'Общая физическая подготовка',
     level: 'Любой',
     master: 'Сергей',
-    notes: 'с ноября ',
+    notes: 'с 7 ноября ',
   },
   {
     weekday: 'Сб',
