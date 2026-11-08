@@ -146,7 +146,7 @@ const lessons: Lesson[] = [
     title: 'Кундалини-йога',
     level: 'Любой',
     master: 'Татьяна',
-    notes: '7 ноября отмена',
+    notes: '',
   },
   {
     weekday: 'Сб',
@@ -175,7 +175,7 @@ const lessons: Lesson[] = [
     title: 'Йога голоса и Гонг-медитация',
     level: 'Лёгкий',
     master: 'Ольга',
-    notes: 'по предварительной записи',
+    notes: '15 ноября отмена',
   },
   {
     weekday: 'Вс',
