@@ -175,7 +175,7 @@ const lessons: Lesson[] = [
     title: 'Йога голоса и Гонг-медитация',
     level: 'Лёгкий',
     master: 'Ольга',
-    notes: '',
+    notes: 'по предварительной записи',
   },
   {
     weekday: 'Вс',
